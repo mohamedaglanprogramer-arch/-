@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>بلح آل عجلان</title>
+    <title>بلح آل عجلان | أجود أنواع البلح</title>
+
+    <meta name="description"
+        content="بلح آل عجلان - بلح طبيعي بمذاق غني وحلاوة لا تقاوم. أجود أنواع البلح من الوادي والواحات.">
 
     <style>
 
@@ -15,821 +18,1199 @@
             box-sizing: border-box;
         }
 
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, Tahoma, sans-serif;
+            font-family: Tahoma, Arial, sans-serif;
+            background:
+                radial-gradient(circle at top, #3b210c 0%, #170b04 45%, #090503 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-            background-color: #120b05;
+        /* =========================
+           الخلفية
+        ========================= */
 
-            background-image:
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+
+            background:
                 linear-gradient(
-                    rgba(0, 0, 0, 0.35),
-                    rgba(0, 0, 0, 0.35)
+                    rgba(15, 7, 2, .72),
+                    rgba(15, 7, 2, .92)
                 ),
                 url("https://png.pngtree.com/background/20250122/original/pngtree-dates-sweet-food-islamic-holidays-decoration-ramadan-kareem-eid-mubarak-background-picture-image_16233606.jpg");
 
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-
-            min-height: 100vh;
         }
 
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+
+            background:
+                radial-gradient(
+                    circle at 50% 10%,
+                    rgba(246, 196, 83, .12),
+                    transparent 35%
+                );
+        }
 
         /* =========================
-           الصفحة الرئيسية
+           الهيدر
         ========================= */
 
-        .container {
-            min-height: 100vh;
+        header {
+            width: 100%;
+            padding: 18px 16px 10px;
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            font-size: 24px;
+            font-weight: bold;
+            color: #f6c453;
+
+            text-shadow: 0 3px 15px rgba(0,0,0,.6);
+        }
+
+        .logo span {
+            font-size: 30px;
+        }
+
+        /* =========================
+           Hero
+        ========================= */
+
+        .hero {
+            min-height: 75vh;
 
             display: flex;
-
+            flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            padding: 20px;
+            text-align: center;
+
+            padding: 30px 18px 60px;
         }
 
+        .hero-badge {
+            display: inline-block;
 
-        .content {
+            padding: 8px 18px;
+            margin-bottom: 18px;
+
+            border: 1px solid rgba(246,196,83,.45);
+            border-radius: 50px;
+
+            background: rgba(246,196,83,.08);
+
+            color: #f6c453;
+            font-size: 14px;
+            font-weight: bold;
+
+            backdrop-filter: blur(8px);
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 12vw, 68px);
+
+            line-height: 1.2;
+
+            color: #f6c453;
+
+            margin-bottom: 16px;
+
+            text-shadow:
+                0 4px 20px rgba(0,0,0,.7);
+        }
+
+        .hero h1 span {
+            display: block;
+
+            color: white;
+            font-size: .42em;
+
+            margin-top: 8px;
+            font-weight: normal;
+        }
+
+        .hero p {
+            max-width: 500px;
+
+            font-size: 18px;
+            line-height: 1.9;
+
+            color: #eee;
+
+            margin-bottom: 28px;
+        }
+
+        /* =========================
+           الزر الرئيسي
+        ========================= */
+
+        .main-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            width: min(100%, 330px);
+
+            padding: 16px 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e6ad32,
+                    #b87914
+                );
+
+            color: #fff;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.4),
+                0 0 25px rgba(201,149,46,.18);
+
+            transition: .25s;
+
+            border: 1px solid rgba(255,255,255,.15);
+        }
+
+        .main-btn:active {
+            transform: scale(.96);
+        }
+
+        /* =========================
+           قسم المنتجات
+        ========================= */
+
+        #products {
+            padding: 35px 14px 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .section-title small {
+            display: block;
+
+            color: #f6c453;
+
+            font-size: 14px;
+
+            margin-bottom: 7px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            color: white;
+        }
+
+        .section-title .line {
+            width: 80px;
+            height: 3px;
+
+            margin: 12px auto 0;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #f6c453,
+                    transparent
+                );
+        }
+
+        /* =========================
+           شبكة المنتجات
+        ========================= */
+
+        .products {
             width: 100%;
             max-width: 700px;
 
-            text-align: center;
+            margin: auto;
 
-            color: white;
+            display: grid;
+            grid-template-columns: 1fr;
 
-            background: rgba(0, 0, 0, 0.35);
-
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-
-            padding: 40px;
-
-            border-radius: 20px;
-
-            border: 1px solid rgba(255, 255, 255, 0.15);
-
-            box-shadow:
-                0 15px 40px rgba(0, 0, 0, 0.4);
+            gap: 20px;
         }
 
+        /* =========================
+           كارت المنتج
+        ========================= */
 
-        .content h1 {
-            font-size: 50px;
+        .product-card {
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.10),
+                    rgba(255,255,255,.035)
+                );
+
+            border: 1px solid rgba(246,196,83,.20);
+
+            border-radius: 24px;
+
+            padding: 12px;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.38);
+
+            backdrop-filter: blur(10px);
+
+            animation: cardShow .7s ease both;
+        }
+
+        .product-card:nth-child(2) {
+            animation-delay: .08s;
+        }
+
+        .product-card:nth-child(3) {
+            animation-delay: .16s;
+        }
+
+        .product-card:nth-child(4) {
+            animation-delay: .24s;
+        }
+
+        /* =========================
+           صورة المنتج
+        ========================= */
+
+        .image-wrapper {
+            position: relative;
+
+            width: 100%;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #2b1608,
+                    #120803
+                );
+
+            border-radius: 18px;
+
+            overflow: hidden;
+        }
+
+        .product-image {
+            display: block;
+
+            width: 100%;
+            height: 280px;
+
+            object-fit: contain;
+
+            padding: 8px;
+
+            transition: .4s;
+        }
+
+        .product-card:active .product-image {
+            transform: scale(1.03);
+        }
+
+        .quality-badge {
+            position: absolute;
+
+            top: 12px;
+            right: 12px;
+
+            padding: 7px 11px;
+
+            border-radius: 30px;
+
+            background: rgba(0,0,0,.7);
+
+            border: 1px solid rgba(246,196,83,.4);
+
+            color: #f6c453;
+
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           تفاصيل المنتج
+        ========================= */
+
+        .product-details {
+            padding: 18px 6px 6px;
+
+            text-align: right;
+        }
+
+        .product-title {
+            font-size: 23px;
 
             color: #f6c453;
 
             margin-bottom: 15px;
 
-            text-shadow:
-                0 3px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
+        .info-list {
+            display: flex;
+            flex-direction: column;
 
-        .content p {
-            font-size: 22px;
-
-            line-height: 1.8;
-
-            color: #ffffff;
+            gap: 8px;
         }
 
+        .info {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 11px 12px;
+
+            border-radius: 13px;
+
+            background: rgba(255,255,255,.055);
+
+            color: #eee;
+
+            font-size: 15px;
+        }
+
+        .info-icon {
+            width: 34px;
+            height: 34px;
+
+            min-width: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(201,149,46,.15);
+
+            font-size: 17px;
+        }
+
+        .info strong {
+            color: #f6c453;
+        }
 
         /* =========================
-           زر اكتشف المزيد
+           زر واتساب
         ========================= */
 
-        .btn {
-            display: inline-block;
+        .whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            margin-top: 25px;
+            gap: 9px;
 
-            padding: 12px 30px;
+            width: 100%;
 
-            background: #c9952e;
+            margin-top: 14px;
+
+            padding: 14px;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #25D366,
+                    #159947
+                );
 
             color: white;
 
             text-decoration: none;
 
-            border-radius: 30px;
-
-            font-size: 18px;
-
+            font-size: 17px;
             font-weight: bold;
 
-            cursor: pointer;
-
-            transition: 0.3s;
-
             box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.25);
+                0 8px 20px rgba(0,0,0,.3);
+
+            transition: .2s;
         }
 
-
-        .btn:hover {
-            background: #e4b74a;
-
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 8px 20px rgba(0, 0, 0, 0.3);
+        .whatsapp:active {
+            transform: scale(.97);
         }
 
+        .whatsapp-icon {
+            font-size: 22px;
+        }
 
         /* =========================
-           نافذة الصورة
-        ========================= */
-
-        .image-popup {
-            display: none;
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 9999;
-
-            background: rgba(0, 0, 0, 0.88);
-
-            justify-content: center;
-
-            align-items: center;
-
-            padding: 20px;
-
-            overflow-y: auto;
-        }
-
-
-        /* =========================
-           محتوى النافذة
-        ========================= */
-
-        .popup-content {
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            text-align: center;
-
-            width: 100%;
-
-            max-width: 600px;
-
-            padding: 20px 0;
-        }
-
-
-        /* =========================
-           الصورة
-        ========================= */
-
-        .image-popup img {
-            width: auto;
-
-            max-width: 90%;
-
-            max-height: 55vh;
-
-            object-fit: contain;
-
-            border-radius: 20px;
-
-            box-shadow:
-                0 0 40px rgba(0, 0, 0, 0.6);
-
-            animation: zoom 0.4s ease;
-        }
-
-
-        /* =========================
-           الكلام تحت الصورة
-        ========================= */
-
-        .popup-text {
-            width: 100%;
-
-            margin-top: 20px;
-
-            color: white;
-
-            animation: textShow 0.6s ease;
-        }
-
-
-        .popup-text h1 {
-            color: #f6c453;
-
-            font-size: 32px;
-
-            margin-bottom: 18px;
-
-            text-shadow:
-                0 3px 10px rgba(0, 0, 0, 0.6);
-        }
-
-
-        /* =========================
-           كارت معلومات المنتج
-        ========================= */
-
-        .product-info {
-            width: 100%;
-
-            max-width: 500px;
-
-            margin: auto;
-
-            padding: 18px;
-
-            background: rgba(255, 255, 255, 0.08);
-
-            border: 1px solid rgba(246, 196, 83, 0.35);
-
-            border-radius: 20px;
-
-            backdrop-filter: blur(8px);
-
-            -webkit-backdrop-filter: blur(8px);
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-
-
-        /* =========================
-           عناصر المعلومات
-        ========================= */
-
-        .info-item {
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            text-align: right;
-
-            padding: 14px 8px;
-
-            color: #ffffff;
-
-            font-size: 19px;
-
-            border-bottom:
-                1px solid rgba(255, 255, 255, 0.12);
-        }
-
-
-        .info-item:last-of-type {
-            border-bottom: none;
-        }
-
-
-        /* =========================
-           أيقونات المعلومات
-        ========================= */
-
-        .info-item .icon {
-            width: 42px;
-
-            height: 42px;
-
-            min-width: 42px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            background:
-                rgba(201, 149, 46, 0.2);
-
-            border:
-                1px solid rgba(246, 196, 83, 0.25);
-
-            border-radius: 50%;
-
-            font-size: 20px;
-        }
-
-
-        .info-item strong {
-            color: #f6c453;
-        }
-
-
-        /* =========================
-           السعر
-        ========================= */
-
-        .price-box {
-            margin-top: 18px;
-
-            padding: 15px 20px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #a87316,
-                    #e4b74a
-                );
-
-            border-radius: 15px;
-
-            color: white;
-
-            box-shadow:
-                0 7px 20px rgba(0, 0, 0, 0.35);
-
-            border:
-                1px solid rgba(255, 255, 255, 0.2);
-        }
-
-
-        .price-box span {
-            font-size: 20px;
-
-            font-weight: bold;
-        }
-
-
-        .price-box strong {
-            font-size: 30px;
-
-            color: #ffffff;
-
-            text-shadow:
-                0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-
-        /* =========================
-           جملة أسفل المعلومات
+           جملة تسويقية
         ========================= */
 
         .product-note {
-            margin-top: 18px;
+            text-align: center;
 
-            color: #f6c453;
+            margin-top: 13px;
 
-            font-size: 17px;
+            color: #d9c8a1;
+
+            font-size: 13px;
 
             line-height: 1.7;
-
-            font-weight: bold;
         }
 
-
         /* =========================
-           زر الإغلاق
+           زر واتساب العائم
         ========================= */
 
-        .close {
-            position: absolute;
+        .floating-whatsapp {
+            position: fixed;
 
-            top: 20px;
+            left: 16px;
+            bottom: 18px;
 
-            right: 30px;
+            width: 58px;
+            height: 58px;
 
-            width: 50px;
-
-            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             border-radius: 50%;
 
-            border: none;
-
-            background: #c9952e;
+            background: #25D366;
 
             color: white;
 
-            font-size: 30px;
+            text-decoration: none;
 
-            cursor: pointer;
-
-            z-index: 10000;
+            font-size: 29px;
 
             box-shadow:
-                0 5px 20px rgba(0, 0, 0, 0.5);
+                0 7px 25px rgba(0,0,0,.45);
 
-            transition: 0.3s;
+            z-index: 999;
+
+            animation: pulse 2s infinite;
         }
-
-
-        .close:hover {
-            background: #e4b74a;
-
-            transform: rotate(90deg);
-        }
-
 
         /* =========================
-           حركة الصورة
+           الفوتر
         ========================= */
 
-        @keyframes zoom {
+        footer {
+            padding: 35px 20px 100px;
+
+            text-align: center;
+
+            border-top:
+                1px solid rgba(255,255,255,.08);
+
+            color: #aaa;
+
+            font-size: 13px;
+
+            line-height: 2;
+        }
+
+        footer strong {
+            color: #f6c453;
+        }
+
+        /* =========================
+           أنيميشن
+        ========================= */
+
+        @keyframes cardShow {
 
             from {
                 opacity: 0;
-
-                transform: scale(0.7);
+                transform: translateY(25px);
             }
 
             to {
                 opacity: 1;
-
-                transform: scale(1);
-            }
-        }
-
-
-        /* =========================
-           حركة الكلام
-        ========================= */
-
-        @keyframes textShow {
-
-            from {
-                opacity: 0;
-
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-
                 transform: translateY(0);
             }
         }
 
+        @keyframes pulse {
+
+            0% {
+                box-shadow:
+                    0 0 0 0 rgba(37,211,102,.5),
+                    0 7px 25px rgba(0,0,0,.45);
+            }
+
+            70% {
+                box-shadow:
+                    0 0 0 13px rgba(37,211,102,0),
+                    0 7px 25px rgba(0,0,0,.45);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 0 rgba(37,211,102,0),
+                    0 7px 25px rgba(0,0,0,.45);
+            }
+        }
 
         /* =========================
-           الموبايل
+           شاشات أكبر
         ========================= */
 
-        @media (max-width: 600px) {
+        @media (min-width: 650px) {
 
-            .content {
-                width: 100%;
-
-                padding: 30px 20px;
+            .products {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-
-            .content h1 {
-                font-size: 35px;
+            .product-image {
+                height: 250px;
             }
 
+            .hero {
+                min-height: 70vh;
+            }
+        }
 
-            .content p {
-                font-size: 18px;
+        /* =========================
+           تحسين الموبايل الصغير
+        ========================= */
+
+        @media (max-width: 360px) {
+
+            .hero {
+                padding-top: 20px;
             }
 
-
-            .popup-content {
-                max-width: 95%;
-
-                padding-top: 35px;
+            .hero h1 {
+                font-size: 38px;
             }
 
-
-            .image-popup img {
-                max-width: 95%;
-
-                max-height: 45vh;
-
-                border-radius: 15px;
-            }
-
-
-            .popup-text h1 {
-                font-size: 25px;
-
-                margin-bottom: 15px;
-            }
-
-
-            .product-info {
-                padding: 12px;
-
-                border-radius: 16px;
-            }
-
-
-            .info-item {
+            .hero p {
                 font-size: 16px;
-
-                padding: 11px 5px;
-
-                gap: 9px;
             }
 
-
-            .info-item .icon {
-                width: 35px;
-
-                height: 35px;
-
-                min-width: 35px;
-
-                font-size: 17px;
+            .product-image {
+                height: 240px;
             }
 
-
-            .price-box {
-                padding: 13px 15px;
+            .product-title {
+                font-size: 21px;
             }
 
-
-            .price-box span {
-                font-size: 18px;
-            }
-
-
-            .price-box strong {
-                font-size: 25px;
-            }
-
-
-            .product-note {
+            .info {
                 font-size: 14px;
-
-                margin-top: 15px;
-            }
-
-
-            .close {
-                top: 15px;
-
-                right: 15px;
-
-                width: 45px;
-
-                height: 45px;
-
-                font-size: 27px;
             }
         }
 
     </style>
-
 </head>
 
 
 <body>
+
+    <!-- =========================
+         الهيدر
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            <span>🌴</span>
+            بلح آل عجلان
+        </div>
+
+    </header>
 
 
     <!-- =========================
          الصفحة الرئيسية
     ========================== -->
 
-    <div class="container">
+    <section class="hero">
 
-        <div class="content">
-
-            <h1>
-                🌴 بلح آل عجلان 🫘
-            </h1>
-
-            <p>
-                بلح طبيعي بمذاق غني وحلاوة لا تقاوم
-                <br>
-                طعم الطبيعة حلو في كل حبة 🌴
-            </p>
-
-            <a
-                class="btn"
-                onclick="openImage()"
-            >
-                اكتشف المزيد
-            </a>
-
+        <div class="hero-badge">
+            ⭐ جودة نختارها لك بعناية
         </div>
 
-    </div>
+        <h1>
+            بلح آل عجلان
 
+            <span>
+                طعم الطبيعة في كل حبة
+            </span>
+        </h1>
+
+        <p>
+            بلح طبيعي بمذاق غني وحلاوة مميزة،
+            من أجود أنواع البلح من الوادي والواحات 🌴
+        </p>
+
+        <a href="#products" class="main-btn">
+            <span>🛒</span>
+            اكتشف منتجاتنا
+            <span>↓</span>
+        </a>
+
+    </section>
 
 
     <!-- =========================
-         نافذة المنتج
+         المنتجات
     ========================== -->
 
-    <div
-        class="image-popup"
-        id="imagePopup"
-    >
+    <section id="products">
+
+        <div class="section-title">
+
+            <small>اختار الحجم المناسب لك</small>
+
+            <h2>
+                منتجاتنا 🌴
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
 
 
-        <!-- زر الإغلاق -->
-
-        <button
-            class="close"
-            onclick="closeImage()"
-        >
-            ×
-        </button>
+        <div class="products">
 
 
+            <!-- =========================
+                 المنتج الأول
+            ========================== -->
 
-        <!-- محتوى النافذة -->
+            <article class="product-card">
 
-        <div class="popup-content">
+                <div class="image-wrapper">
 
+                    <span class="quality-badge">
+                        ⭐ جودة ممتازة
+                    </span>
 
-            <!-- صورة المنتج -->
-
-            <img
-                src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3YjM0YTNiM2M0ODE5MWIwMzUxYzE4YmEzNDI5OTk6ZmlsZV8wMDAwMDAwMDMyN2M4MWY0ODhhY2U2YzczY2VmMWFjMSIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc2IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiIwZjdlNTQzNzVmNzE0NzliZmJiNTU5YWVlNDIzZDU3MzczYzgzMmI2MzliNWI5NjZjY2FiZmU2NjBkNDkzNWY4IiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
-                alt="بلح آل عجلان"
-            >
-
-
-
-            <!-- معلومات المنتج -->
-
-            <div class="popup-text">
-
-
-                <h1>
-                    🌴 بلح العجلان
-                </h1>
-
-
-                <div class="product-info">
-
-
-                    <div class="info-item">
-
-                        <span class="icon">
-                            ⭐
-                        </span>
-
-                        <span>
-                            أجود أنواع البلح
-                        </span>
-
-                    </div>
-
-
-
-                    <div class="info-item">
-
-                        <span class="icon">
-                            ⚖️
-                        </span>
-
-                        <span>
-                            الوزن:
-                            <strong>5 كيلو</strong>
-                        </span>
-
-                    </div>
-
-
-
-                    <div class="info-item">
-
-                        <span class="icon">
-                            📍
-                        </span>
-
-                        <span>
-                            النوع:
-                            <strong>الوادي والواحات</strong>
-                        </span>
-
-                    </div>
-
-                    <div class="info-item">
-                        <span class="icon">
-                            📱
-                        </span>
-                        <span>
-                            الرقم:
-                            <strong><a>01141013558</a></strong>
-                        </span>
-                    </div>
-
-
-
-                    <!-- السعر -->
-
-                    <div class="price-box">
-
-                        <span>
-                            💰 السعر
-                        </span>
-
-                        <strong>
-                            300 ج
-                        </strong>
-
-                    </div>
-
+                    <img
+                        class="product-image"
+                        src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3Y2FlZmNmY2Y0ODE5MTkwMGY1NDJhNzY4ZjA0MWY6ZmlsZV8wMDAwMDAwMDY0M2M4MWY0YmJjYmIxMGIwMjJiMjVhMyIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc3IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiI4YmM5NzRkMjY0NDNiNDI1NzNmMWYxM2RkMTk3ZTA0ZWFjOGVjYjA3MTA3MmY1NDEwYzNkMmEwY2JmMjc3ZjRmIiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
+                        alt="بلح آل عجلان - 10 كيلو"
+                        loading="lazy"
+                    >
 
                 </div>
 
 
+                <div class="product-details">
 
-                <!-- جملة جذابة -->
-
-                <p class="product-note">
-
-                    🌴 طعم طبيعي
-                    •
-                    جودة ممتازة
-                    •
-                    حلاوة لا تُقاوم
-
-                </p>
+                    <h3 class="product-title">
+                        🌴 بلح العجلان
+                    </h3>
 
 
-            </div>
+                    <div class="info-list">
 
+                        <div class="info">
+
+                            <span class="info-icon">⚖️</span>
+
+                            <span>
+                                الوزن:
+                                <strong>10 كيلو</strong>
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="info-icon">📍</span>
+
+                            <span>
+                                النوع:
+                                <strong>الوادي والواحات</strong>
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="info-icon">⭐</span>
+
+                            <span>
+                                أجود أنواع البلح
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        class="whatsapp"
+                        href="https://wa.me/201141013558"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        <span class="whatsapp-icon">🟢</span>
+
+                        اطلب الآن عبر واتساب
+
+                    </a>
+
+
+                    <p class="product-note">
+                        🌴 طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =========================
+                 المنتج الثاني
+            ========================== -->
+
+            <article class="product-card">
+
+                <div class="image-wrapper">
+
+                    <span class="quality-badge">
+                        ⭐ جودة ممتازة
+                    </span>
+
+                    <img
+                        class="product-image"
+                        src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3Y2IwMTQ3ZDkwODE5MWI3MDU5NzYxNmM2ZDBjZDk6ZmlsZV8wMDAwMDAwMDNhMmM4MWY0YTBjYmEzZWU5ZWVjOTk2ZiIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc3IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiI1YjU5OGIzNjIwYTlmMjIxZjU5NmI5YTEyOWQ0MWFkYjA5OTU5MzMzYTMwNTk0MmIyNTBjZDkzZDhlYzU2OTViIiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
+                        alt="بلح آل عجلان - 5 كيلو"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <h3 class="product-title">
+                        🌴 بلح العجلان
+                    </h3>
+
+
+                    <div class="info-list">
+
+                        <div class="info">
+
+                            <span class="info-icon">⚖️</span>
+
+                            <span>
+                                الوزن:
+                                <strong>5 كيلو</strong>
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="info-icon">📍</span>
+
+                            <span>
+                                النوع:
+                                <strong>الوادي والواحات</strong>
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="info-icon">⭐</span>
+
+                            <span>
+                                أجود أنواع البلح
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        class="whatsapp"
+                        href="https://wa.me/201141013558"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        <span class="whatsapp-icon">🟢</span>
+
+                        اطلب الآن عبر واتساب
+
+                    </a>
+
+
+                    <p class="product-note">
+                        🌴 طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =========================
+                 المنتج الثالث
+            ========================== -->
+
+            <article class="product-card">
+
+                <div class="image-wrapper">
+
+                    <span class="quality-badge">
+                        ⭐ جودة ممتازة
+                    </span>
+
+                    <img
+                        class="product-image"
+                        src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3Y2FhYjRhOTQ4ODE5MTkyNjcwMjc2YWM0NzdkZWU6ZmlsZV8wMDAwMDAwMGZmMWM4MWY0YTAzNzE0YzRhZWIyMjExYSIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc3IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiJkNjA0ZmFjMmYxYmFmYjQwZDY5ZDE3MzhjZDAzN2ExY2ZhOTdmMjg1ODJiMDU1OTRjOGY0MTRiYjQ5ZmEzZDkwIiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
+                        alt="بلح آل عجلان - 2200 كيلو"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <h3 class="product-title">
+                        🌴 بلح العجلان
+                    </h3>
+
+
+                    <div class="info-list">
+
+                        <div class="info">
+
+                            <span class="info-icon">⚖️</span>
+
+                            <span>
+                                الوزن:
+                                <strong>2,200 كيلو</strong>
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="info-icon">📍</span>
+
+                            <span>
+                                النوع:
+                                <strong>الوادي والواحات</strong>
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="info-icon">⭐</span>
+
+                            <span>
+                                أجود أنواع البلح
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        class="whatsapp"
+                        href="https://wa.me/201141013558"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        <span class="whatsapp-icon">🟢</span>
+
+                        اطلب الآن عبر واتساب
+
+                    </a>
+
+
+                    <p class="product-note">
+                        🌴 طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =========================
+                 المنتج الرابع
+            ========================== -->
+
+            <article class="product-card">
+
+                <div class="image-wrapper">
+
+                    <span class="quality-badge">
+                        ⭐ جودة ممتازة
+                    </span>
+
+                    <img
+                        class="product-image"
+                        src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3Y2FkMTlmZmI0ODE5MWE2OGI4OTM3NmNkZDZlZTg6ZmlsZV8wMDAwMDAwMDgzZTA4MjBhODkyMGY0ZmExYmUzNzQ3NCIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc3IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiJkMGVmYmE2OGYxMTg3OTZjYTdjMWZiOTQyMmJhODU5MmU3ZGU2NWFkMWU3NDI5ZjQzOTE3YWIzMDcwNzA2YzhmIiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
+                        alt="بلح آل عجلان - 1400 كيلو"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <h3 class="product-title">
+                        🌴 بلح العجلان
+                    </h3>
+
+
+                    <div class="info-list">
+
+                        <div class="info">
+
+                            <span class="info-icon">⚖️</span>
+
+                            <span>
+                                الوزن:
+                                <strong>1400 كيلو</strong>
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="info-icon">📍</span>
+
+                            <span>
+                                النوع:
+                                <strong>الوادي والواحات</strong>
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="info-icon">⭐</span>
+
+                            <span>
+                                أجود أنواع البلح
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        class="whatsapp"
+                        href="https://wa.me/201141013558"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        <span class="whatsapp-icon">🟢</span>
+
+                        اطلب الآن عبر واتساب
+
+                    </a>
+
+
+                    <p class="product-note">
+                        🌴 طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =========================
+                 المنتج الخامس
+            ========================== -->
+
+            <article class="product-card">
+
+                <div class="image-wrapper">
+
+                    <span class="quality-badge">
+                        ⭐ جودة ممتازة
+                    </span>
+
+                    <img
+                        class="product-image"
+                        src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3Y2FlMWMwMTJjODE5MTg5ZmRkYjVkYWI3NTZlY2I6ZmlsZV8wMDAwMDAwMDdiNjQ4MWY0YjMzYmE3YzU3NGQxNTE4NSIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc3IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiI3NzlhNDI1NWIzNWQ4YzEwYWYwODliNWM4MWI4YmYyNTYwMmI3YWEzNGFmNmUwYTk2YzliYjFmYTZiMDEwM2U5IiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
+                        alt="بلح آل عجلان - 700 جرام"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <h3 class="product-title">
+                        🌴 بلح العجلان
+                    </h3>
+
+
+                    <div class="info-list">
+
+                        <div class="info">
+
+                            <span class="info-icon">⚖️</span>
+
+                            <span>
+                                الوزن:
+                                <strong>700 جرام</strong>
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="info-icon">📍</span>
+
+                            <span>
+                                النوع:
+                                <strong>الوادي والواحات</strong>
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="info-icon">⭐</span>
+
+                            <span>
+                                أجود أنواع البلح
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        class="whatsapp"
+                        href="https://wa.me/201141013558"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        <span class="whatsapp-icon">🟢</span>
+
+                        اطلب الآن عبر واتساب
+
+                    </a>
+
+
+                    <p class="product-note">
+                        🌴 طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
+                    </p>
+
+                </div>
+
+            </article>
 
         </div>
 
-    </div>
-
+    </section>
 
 
     <!-- =========================
-         JavaScript
+         واتساب عائم
     ========================== -->
 
-    <script>
+    <a
+        class="floating-whatsapp"
+        href="https://wa.me/201141013558"
+        target="_blank"
+        rel="noopener"
+        aria-label="تواصل معنا عبر واتساب"
+    >
+        ☎
+    </a>
 
 
-        // فتح نافذة المنتج
+    <!-- =========================
+         الفوتر
+    ========================== -->
 
-        function openImage() {
+    <footer>
 
-            document.getElementById("imagePopup").style.display = "flex";
+        <div>
+            🌴 <strong>بلح آل عجلان</strong>
+        </div>
 
-        }
+        <div>
+            طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
+        </div>
 
+        <div>
+            © 2026 جميع الحقوق محفوظة
+        </div>
 
-
-        // إغلاق نافذة المنتج
-
-        function closeImage() {
-
-            document.getElementById("imagePopup").style.display = "none";
-
-        }
-
-
-
-        // إغلاق النافذة عند الضغط خارج المحتوى
-
-        document
-            .getElementById("imagePopup")
-            .addEventListener("click", function(event) {
-
-                if (event.target === this) {
-
-                    closeImage();
-
-                }
-
-            });
-
-
-
-        // إغلاق النافذة بزر ESC
-
-        document.addEventListener("keydown", function(event) {
-
-            if (event.key === "Escape") {
-
-                closeImage();
-
-            }
-
-        });
-
-
-    </script>
-
+    </footer>
 
 </body>
 
