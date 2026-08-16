@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة تحكم الأدمن | تمور آل عجلان</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Tahoma,Arial,sans-serif;min-height:100vh;color:#fff;background:radial-gradient(circle at top,#3b210c,#170b04 45%,#090503);padding:25px 15px;overflow-x:hidden}
+.wrap{width:100%;max-width:1150px;margin:auto}
+.login,.panel{background:rgba(255,255,255,.07);border:1px solid rgba(246,196,83,.25);border-radius:28px;padding:30px;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);box-shadow:0 25px 70px rgba(0,0,0,.55)}
+.login{width:100%;max-width:440px;margin:60px auto;text-align:center;animation:loginShow .6s ease}
+@keyframes loginShow{from{opacity:0;transform:translateY(30px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+.logo{font-size:58px;margin-bottom:10px;filter:drop-shadow(0 10px 15px rgba(0,0,0,.45))}
+h1,h2{color:#f6c453;margin-bottom:10px}
+.login h1{font-size:28px}
+p{color:#d7cdc1;line-height:1.8}
+.label{display:block;margin-top:15px;margin-bottom:5px;color:#ddd;font-size:14px}
+input,select,textarea{width:100%;padding:14px;border-radius:13px;border:1px solid rgba(246,196,83,.25);background:rgba(0,0,0,.35);color:#fff;outline:none;font-family:inherit;font-size:15px;transition:.25s ease}
+textarea{resize:vertical;min-height:70px}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.45)}
+input:focus,select:focus,textarea:focus{border-color:#f6c453;box-shadow:0 0 0 3px rgba(246,196,83,.08)}
+.password-box{position:relative}
+.password-box input{padding-left:58px}
+.show-password{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:40px;height:40px;padding:0;margin:0;border-radius:10px;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(246,196,83,.2);cursor:pointer}
+.show-password:hover{background:rgba(246,196,83,.2)}
+button{border:0;border-radius:13px;padding:13px 18px;cursor:pointer;font-family:inherit;font-weight:bold;font-size:14px;transition:.2s ease}
+button:hover{transform:translateY(-2px)}
+button:active{transform:translateY(0)}
+button:disabled{opacity:.6;cursor:not-allowed}
+.primary{background:linear-gradient(135deg,#f6c453,#bd7c17);color:#241205}
+.primary:hover{box-shadow:0 12px 30px rgba(246,196,83,.25)}
+.green{background:#25d366;color:#fff}
+.dark{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.13)}
+.danger{background:#a92929;color:#fff}
+.small{padding:8px 12px;font-size:12px}
+.full{width:100%;margin-top:15px}
+.error{min-height:25px;margin-top:12px;color:#ff7777;font-size:14px}
+.success{color:#25d366 !important}
+.hidden{display:none !important}
+.top{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:25px}
+.row{display:flex;gap:10px;margin-top:10px}
+.row button{flex:1}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:25px}
+.stat{padding:22px;border-radius:20px;background:rgba(0,0,0,.25);border:1px solid rgba(246,196,83,.14);text-align:center;transition:.25s ease}
+.stat:hover{transform:translateY(-4px);border-color:rgba(246,196,83,.35)}
+.stat span{display:block;color:#d7cdc1;margin-bottom:10px}
+.stat strong{display:block;font-size:30px;color:#f6c453}
+.add-box{margin-bottom:28px;padding:22px;border-radius:22px;background:rgba(0,0,0,.2);border:1px solid rgba(246,196,83,.15)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{padding:20px;border-radius:22px;background:rgba(0,0,0,.22);border:1px solid rgba(246,196,83,.15);transition:.25s ease}
+.card:hover{transform:translateY(-3px);border-color:rgba(246,196,83,.35)}
+.card h2{font-size:22px}
+.card img{width:100%;height:150px;object-fit:contain;border-radius:14px;background:rgba(255,255,255,.04);margin-bottom:10px}
+.card-fields{display:grid;gap:8px;margin-top:10px}
+.inline2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:12px;background:rgba(255,255,255,.04);margin-top:8px}
+.toggle-row label{font-size:13px;color:#ddd}
+.orders{margin-top:35px}
+.order{padding:20px;margin-top:13px;border-radius:20px;background:rgba(0,0,0,.22);border:1px solid rgba(246,196,83,.13)}
+.order h3{color:#f6c453;margin-bottom:10px}
+.order-items{margin:10px 0;padding:10px;border-radius:12px;background:rgba(255,255,255,.04);font-size:14px;color:#e8dfd5}
+.order-items div{padding:3px 0}
+.status{display:inline-block;padding:5px 10px;border-radius:20px;margin-top:10px;background:rgba(246,196,83,.12);color:#f6c453}
+.empty{padding:25px;border-radius:18px;text-align:center;color:#cfc3b7;background:rgba(0,0,0,.2)}
+@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:1fr}.grid2,.inline2{grid-template-columns:1fr}}
+@media(max-width:500px){
+ body{padding:12px 8px} .login,.panel{padding:20px;border-radius:22px} .login{margin:25px auto}
+ .stats{grid-template-columns:1fr} .row{flex-direction:column} .top{align-items:stretch} .top .row{width:100%}
+ .login h1{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<section class="login" id="loginBox">
+ <div class="logo">🌴</div>
+ <h1>لوحة تحكم الأدمن</h1>
+ <p>تمور آل عجلان</p>
+
+ <label class="label">اسم المستخدم</label>
+ <input id="username" type="text" autocomplete="username" placeholder="اسم المستخدم">
+
+ <label class="label">كلمة المرور</label>
+ <div class="password-box">
+  <input id="password" type="password" autocomplete="current-password" placeholder="كلمة المرور">
+  <button type="button" class="show-password" id="passwordToggle" onclick="togglePassword()">👁️</button>
+ </div>
+
+ <button class="primary full" id="loginButton" onclick="login()">🔐 دخول لوحة التحكم</button>
+ <div class="error" id="loginError"></div>
+</section>
+
+<section class="panel hidden" id="adminPanel">
+
+ <div class="top">
+  <div>
+   <h1>👑 إدارة تمور آل عجلان</h1>
+   <p>إدارة الأسعار والمنتجات والطلبات والمخزون</p>
+  </div>
+  <div class="row">
+   <button class="dark" onclick="loadEverything()">🔄 تحديث</button>
+   <a href="index.html" target="_blank" style="text-decoration:none"><button class="dark" type="button">🌐 عرض المتجر</button></a>
+   <button class="danger" onclick="logout()">🚪 تسجيل خروج</button>
+  </div>
+ </div>
+
+ <div class="stats">
+  <div class="stat"><span>📦 عدد المنتجات</span><strong id="productsCount">0</strong></div>
+  <div class="stat"><span>🛒 عدد الطلبات</span><strong id="ordersCount">0</strong></div>
+  <div class="stat"><span>👥 العملاء</span><strong id="customersCount">0</strong></div>
+  <div class="stat"><span>💰 المبيعات</span><strong id="salesCount">0 جنيه</strong></div>
+ </div>
+
+ <div class="add-box">
+  <h2>➕ إضافة منتج جديد</h2>
+
+  <label class="label">اسم المنتج</label>
+  <input id="newName" type="text" placeholder="مثال: بلح سيوي">
+
+  <div class="inline2">
+   <div>
+    <label class="label">الوزن</label>
+    <input id="newWeight" type="text" placeholder="مثال: 5 كيلو">
+   </div>
+   <div>
+    <label class="label">السعر بالجنيه</label>
+    <input id="newPrice" type="number" min="0" placeholder="مثال: 450">
+   </div>
+  </div>
+
+  <div class="inline2">
+   <div>
+    <label class="label">البادج</label>
+    <input id="newBadge" type="text" placeholder="مثال: عرض خاص">
+   </div>
+   <div>
+    <label class="label">المخزون</label>
+    <input id="newStock" type="number" min="0" placeholder="مثال: 50">
+   </div>
+  </div>
+
+  <label class="label">رابط صورة المنتج</label>
+  <input id="newImage" type="text" placeholder="ضع رابط الصورة">
+
+  <label class="label">وصف المنتج (اختياري)</label>
+  <textarea id="newDesc" placeholder="وصف قصير للمنتج"></textarea>
+
+  <button class="green full" onclick="addProduct()">➕ إضافة المنتج</button>
+ </div>
+
+ <h2>🌴 المنتجات</h2>
+ <div class="products" id="adminProducts"></div>
+
+ <div class="orders">
+  <h2>🛒 طلبات العملاء</h2>
+  <div id="ordersList"></div>
+ </div>
+
+</section>
+
+</div>
+
+<script>
+/* ================== الإعدادات ================== */
+const ADMIN_USERNAME = "admin";
+const ADMIN_PASSWORD = "123456";
+const LOGIN_KEY = "alaglan_admin_logged_in";
+const PRODUCTS_KEY = "alaglan_products";
+const ORDERS_KEY = "alaglan_orders";
+
+const defaultProducts = [
+ {id:1,name:"بلح سيوي",weight:"5 كيلو",price:450,badge:"الأكثر طلبًا",image:"",stock:50,active:true,desc:"بلح سيوي فاخر من واحة سيوة، طعم طبيعي وحلاوة متوازنة."},
+ {id:2,name:"بلح واحات",weight:"5 كيلو",price:500,badge:"عرض خاص",image:"",stock:35,active:true,desc:"بلح الواحات الفاخر، محصول طازج بجودة ممتازة."},
+ {id:3,name:"بلح فاخر",weight:"10 كيلو",price:850,badge:"فاخر",image:"",stock:20,active:true,desc:"تشكيلة فاخرة من أجود أنواع البلح المنتقى بعناية."},
+ {id:4,name:"تمور آل عجلان",weight:"10 كيلو",price:950,badge:"مميز",image:"",stock:15,active:true,desc:"توقيعنا الخاص، أرقى أنواع التمور بغلاف هدية فاخر."}
+];
+
+function el(id){ return document.getElementById(id); }
+function escapeHtml(str){
+ return String(str??"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function escapeAttr(str){ return escapeHtml(str).replace(/`/g,"&#96;"); }
+
+/* ================== المنتجات ================== */
+function getProducts(){
+ const saved = localStorage.getItem(PRODUCTS_KEY);
+ if(!saved){
+  localStorage.setItem(PRODUCTS_KEY, JSON.stringify(defaultProducts));
+  return [...defaultProducts];
+ }
+ try{
+  const products = JSON.parse(saved);
+  return Array.isArray(products) ? products : [];
+ }catch{
+  localStorage.setItem(PRODUCTS_KEY, JSON.stringify(defaultProducts));
+  return [...defaultProducts];
+ }
+}
+function saveProducts(products){
+ localStorage.setItem(PRODUCTS_KEY, JSON.stringify(products));
+}
+
+/* ================== الطلبات ================== */
+function getOrders(){
+ const saved = localStorage.getItem(ORDERS_KEY);
+ if(!saved) return [];
+ try{
+  const orders = JSON.parse(saved);
+  return Array.isArray(orders) ? orders : [];
+ }catch{ return []; }
+}
+function saveOrders(orders){
+ localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+}
+
+/* ================== تسجيل الدخول ================== */
+function login(){
+ const username = el("username").value.trim();
+ const password = el("password").value;
+ const error = el("loginError");
+ error.textContent = "";
+ error.classList.remove("success");
+
+ if(username===""){ error.textContent="⚠️ اكتب اسم المستخدم"; el("username").focus(); return; }
+ if(password===""){ error.textContent="⚠️ اكتب كلمة المرور"; el("password").focus(); return; }
+
+ if(username!==ADMIN_USERNAME || password!==ADMIN_PASSWORD){
+  error.textContent = "❌ اسم المستخدم أو كلمة المرور غير صحيحة";
+  el("password").select();
+  return;
+ }
+
+ localStorage.setItem(LOGIN_KEY,"true");
+ error.textContent = "✅ تم تسجيل الدخول بنجاح";
+ error.classList.add("success");
+ setTimeout(showPanel,250);
+}
+
+function showPanel(){
+ el("loginBox").classList.add("hidden");
+ el("adminPanel").classList.remove("hidden");
+ loadEverything();
+}
+
+function logout(){
+ localStorage.removeItem(LOGIN_KEY);
+ el("adminPanel").classList.add("hidden");
+ el("loginBox").classList.remove("hidden");
+ el("password").value = "";
+ el("loginError").textContent = "";
+ el("username").focus();
+}
+
+function togglePassword(){
+ const password = el("password");
+ const button = el("passwordToggle");
+ if(password.type==="password"){ password.type="text"; button.textContent="🙈"; }
+ else{ password.type="password"; button.textContent="👁️"; }
+}
+
+/* ================== تحميل كل شيء ================== */
+function loadEverything(){
+ loadDashboard();
+ loadProducts();
+ loadOrders();
+}
+
+/* ================== الإحصائيات ================== */
+function loadDashboard(){
+ const products = getProducts();
+ const orders = getOrders();
+
+ el("productsCount").textContent = products.length;
+ el("ordersCount").textContent = orders.length;
+
+ const uniquePhones = new Set(orders.map(o=>o.customer && o.customer.phone).filter(Boolean));
+ el("customersCount").textContent = uniquePhones.size;
+
+ const sales = orders
+  .filter(o=>o.status!=="ملغي")
+  .reduce((sum,o)=>sum + (Number(o.total)||0), 0);
+ el("salesCount").textContent = sales + " جنيه";
+}
+
+/* ================== عرض المنتجات في اللوحة ================== */
+function loadProducts(){
+ const products = getProducts();
+ const box = el("adminProducts");
+
+ if(products.length===0){
+  box.innerHTML = '<div class="empty">لا توجد منتجات حاليًا، أضف منتج جديد من الأعلى</div>';
+  return;
+ }
+
+ box.innerHTML = products.map(p=>`
+  <div class="card">
+   ${p.image?`<img src="${escapeAttr(p.image)}" alt="${escapeAttr(p.name)}">`:""}
+   <h2>${escapeHtml(p.name)}</h2>
+   <div class="card-fields">
+    <div class="inline2">
+     <div><label class="label">الاسم</label><input id="name-${p.id}" value="${escapeAttr(p.name)}"></div>
+     <div><label class="label">الوزن</label><input id="weight-${p.id}" value="${escapeAttr(p.weight||"")}"></div>
+    </div>
+    <div class="inline2">
+     <div><label class="label">السعر</label><input id="price-${p.id}" type="number" min="0" value="${p.price||0}"></div>
+     <div><label class="label">المخزون</label><input id="stock-${p.id}" type="number" min="0" value="${p.stock||0}"></div>
+    </div>
+    <div><label class="label">البادج</label><input id="badge-${p.id}" value="${escapeAttr(p.badge||"")}"></div>
+    <div><label class="label">رابط الصورة</label><input id="image-${p.id}" value="${escapeAttr(p.image||"")}"></div>
+    <div><label class="label">الوصف</label><textarea id="desc-${p.id}">${escapeHtml(p.desc||"")}</textarea></div>
+    <div class="toggle-row">
+     <label>${p.active!==false?'✅ ظاهر في المتجر':'⛔ مخفي من المتجر'}</label>
+     <input type="checkbox" id="active-${p.id}" ${p.active!==false?"checked":""} style="width:auto">
+    </div>
+   </div>
+   <div class="row" style="margin-top:14px">
+    <button class="primary small" onclick="updateProduct(${p.id})">💾 حفظ</button>
+    <button class="danger small" onclick="deleteProduct(${p.id})">🗑️ حذف</button>
+   </div>
+  </div>
+ `).join("");
+}
+
+function addProduct(){
+ const name = el("newName").value.trim();
+ const weight = el("newWeight").value.trim();
+ const price = Number(el("newPrice").value);
+ const badge = el("newBadge").value.trim();
+ const image = el("newImage").value.trim();
+ const stock = Number(el("newStock").value);
+ const desc = el("newDesc").value.trim();
+
+ if(!name){ alert("⚠️ اكتب اسم المنتج"); return; }
+ if(!price || price<0){ alert("⚠️ اكتب سعر صحيح"); return; }
+
+ const products = getProducts();
+ const newId = products.length ? Math.max(...products.map(p=>p.id))+1 : 1;
+
+ products.push({
+  id:newId, name, weight, price,
+  badge, image, stock: isNaN(stock)?0:stock,
+  active:true, desc
+ });
+
+ saveProducts(products);
+
+ el("newName").value="";
+ el("newWeight").value="";
+ el("newPrice").value="";
+ el("newBadge").value="";
+ el("newImage").value="";
+ el("newStock").value="";
+ el("newDesc").value="";
+
+ loadEverything();
+}
+
+function updateProduct(id){
+ const products = getProducts();
+ const p = products.find(x=>x.id===id);
+ if(!p) return;
+
+ p.name = el(`name-${id}`).value.trim() || p.name;
+ p.weight = el(`weight-${id}`).value.trim();
+ p.price = Number(el(`price-${id}`).value)||0;
+ p.stock = Number(el(`stock-${id}`).value)||0;
+ p.badge = el(`badge-${id}`).value.trim();
+ p.image = el(`image-${id}`).value.trim();
+ p.desc = el(`desc-${id}`).value.trim();
+ p.active = el(`active-${id}`).checked;
+
+ saveProducts(products);
+ loadEverything();
+}
+
+function deleteProduct(id){
+ if(!confirm("متأكد من حذف هذا المنتج؟")) return;
+ let products = getProducts();
+ products = products.filter(p=>p.id!==id);
+ saveProducts(products);
+ loadEverything();
+}
+
+/* ================== الطلبات ================== */
+function loadOrders(){
+ const orders = getOrders().slice().sort((a,b)=> new Date(b.date) - new Date(a.date));
+ const box = el("ordersList");
+
+ if(orders.length===0){
+  box.innerHTML = '<div class="empty">لا توجد طلبات حتى الآن</div>';
+  return;
+ }
+
+ box.innerHTML = orders.map(o=>{
+  const itemsHtml = (o.items||[]).map(i=>
+   `<div>${escapeHtml(i.name)} (${escapeHtml(i.weight||"")}) × ${i.qty} = ${i.price*i.qty} جنيه</div>`
+  ).join("");
+  const dateStr = new Date(o.date).toLocaleString("ar-EG");
+  return `<div class="order">
+   <h3>طلب #${o.id}</h3>
+   <p>👤 ${escapeHtml(o.customer?.name||"-")} | 📞 ${escapeHtml(o.customer?.phone||"-")}</p>
+   ${o.customer?.address?`<p>📍 ${escapeHtml(o.customer.address)}</p>`:""}
+   <div class="order-items">${itemsHtml}</div>
+   <p><strong>الإجمالي: ${o.total} جنيه</strong></p>
+   <p style="color:#a99e91;font-size:12px">${dateStr}</p>
+   <select onchange="updateOrderStatus(${o.id}, this.value)" style="margin-top:10px">
+    <option value="جديد" ${o.status==="جديد"?"selected":""}>🆕 جديد</option>
+    <option value="قيد التنفيذ" ${o.status==="قيد التنفيذ"?"selected":""}>⏳ قيد التنفيذ</option>
+    <option value="تم التوصيل" ${o.status==="تم التوصيل"?"selected":""}>✅ تم التوصيل</option>
+    <option value="ملغي" ${o.status==="ملغي"?"selected":""}>❌ ملغي</option>
+   </select>
+   <div class="row" style="margin-top:10px">
+    <button class="danger small" onclick="deleteOrder(${o.id})">🗑️ حذف الطلب</button>
+   </div>
+  </div>`;
+ }).join("");
+}
+
+function updateOrderStatus(id, status){
+ const orders = getOrders();
+ const o = orders.find(x=>x.id===id);
+ if(!o) return;
+ o.status = status;
+ saveOrders(orders);
+ loadDashboard();
+}
+
+function deleteOrder(id){
+ if(!confirm("متأكد من حذف هذا الطلب؟")) return;
+ let orders = getOrders();
+ orders = orders.filter(o=>o.id!==id);
+ saveOrders(orders);
+ loadEverything();
+}
+
+/* ================== تشغيل الصفحة ================== */
+window.addEventListener("keydown",(e)=>{
+ if(e.key==="Enter" && !el("loginBox").classList.contains("hidden")){
+  login();
+ }
+});
+
+if(localStorage.getItem(LOGIN_KEY)==="true"){
+ showPanel();
+}
+</script>
+</body>
+</html>
