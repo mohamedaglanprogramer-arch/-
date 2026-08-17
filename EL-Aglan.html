@@ -2,1216 +2,4093 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>بلح آل عجلان | أجود أنواع البلح</title>
-
-    <meta name="description"
-        content="بلح آل عجلان - بلح طبيعي بمذاق غني وحلاوة لا تقاوم. أجود أنواع البلح من الوادي والواحات.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Tahoma, Arial, sans-serif;
-            background:
-                radial-gradient(circle at top, #3b210c 0%, #170b04 45%, #090503 100%);
-            color: white;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* =========================
-           الخلفية
-        ========================= */
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-
-            background:
-                linear-gradient(
-                    rgba(15, 7, 2, .72),
-                    rgba(15, 7, 2, .92)
-                ),
-                url("https://png.pngtree.com/background/20250122/original/pngtree-dates-sweet-food-islamic-holidays-decoration-ramadan-kareem-eid-mubarak-background-picture-image_16233606.jpg");
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="تمور آل عجلان - أجود أنواع البلح والتمور بأوزان وأسعار مختلفة.">
+
+<meta name="theme-color" content="#120802">
+
+<title>تمور آل عجلان | طعم الطبيعة</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#090402;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body.no-scroll{
+    overflow:hidden;
+}
+
+button,
+input,
+a{
+    font-family:inherit;
+}
+
+a{
+    color:inherit;
+}
+
+:root{
+    --gold:#f6c453;
+    --gold2:#bd7c17;
+    --brown:#120702;
+    --green:#25d366;
+    --glass:rgba(255,255,255,.07);
+    --border:rgba(246,196,83,.22);
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.page-bg{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+        linear-gradient(
+            rgba(15,7,2,.58),
+            rgba(15,7,2,.85)
+        ),
+        url("https://png.pngtree.com/background/20250122/original/pngtree-dates-sweet-food-islamic-holidays-decoration-ramadan-kareem-eid-mubarak-background-picture-image_16233606.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    animation:bgZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes bgZoom{
+    from{transform:scale(1)}
+    to{transform:scale(1.08)}
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:-30%;
+    z-index:-4;
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(246,196,83,.18),
+            transparent 18%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(189,124,23,.15),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,170,30,.07),
+            transparent 30%
+        );
+
+    animation:lightMove 10s ease-in-out infinite alternate;
+}
+
+@keyframes lightMove{
+    0%{
+        transform:translate(-3%,-2%) scale(1);
+    }
+
+    50%{
+        transform:translate(3%,2%) scale(1.08);
+    }
+
+    100%{
+        transform:translate(-2%,3%) scale(1.04);
+    }
+}
+
+/* =========================
+   FLYING DATES
+========================= */
+
+.flying-dates{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.flying-date{
+    position:absolute;
+
+    width:48px;
+    height:72px;
+
+    border-radius:
+        48% 52% 48% 52%/
+        58% 58% 42% 42%;
+
+    background:
+        radial-gradient(
+            ellipse at 35% 25%,
+            #d99a38 0%,
+            #a85b16 25%,
+            #632b08 60%,
+            #321303 100%
+        );
+
+    box-shadow:
+        inset -8px -10px 12px rgba(0,0,0,.5),
+        inset 7px 5px 10px rgba(255,210,100,.25),
+        0 10px 25px rgba(0,0,0,.65);
+
+    opacity:.65;
+
+    animation:
+        dateFly linear infinite,
+        dateRotate ease-in-out infinite alternate;
+}
+
+.flying-date::before{
+    content:"";
+    position:absolute;
+
+    width:9px;
+    height:22px;
+
+    top:12px;
+    left:12px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,230,160,.65),
+            transparent
+        );
+
+    transform:rotate(25deg);
+}
+
+.flying-date::after{
+    content:"";
+    position:absolute;
+
+    width:2px;
+    height:48px;
+
+    top:13px;
+    left:50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,210,110,.25),
+            transparent
+        );
+}
+
+.date1{
+    left:5%;
+    animation-duration:13s,4s;
+    animation-delay:-2s,0s;
+}
+
+.date2{
+    left:15%;
+    width:65px;
+    height:92px;
+    animation-duration:17s,5s;
+    animation-delay:-9s,-2s;
+}
+
+.date3{
+    left:27%;
+    width:35px;
+    height:54px;
+    animation-duration:11s,3s;
+    animation-delay:-5s,-1s;
+}
+
+.date4{
+    left:39%;
+    width:58px;
+    height:84px;
+    animation-duration:15s,4s;
+    animation-delay:-11s,-3s;
+}
+
+.date5{
+    left:52%;
+    animation-duration:12s,4s;
+    animation-delay:-4s,-2s;
+}
+
+.date6{
+    left:64%;
+    width:70px;
+    height:100px;
+    animation-duration:19s,6s;
+    animation-delay:-14s,-1s;
+}
+
+.date7{
+    left:76%;
+    width:38px;
+    height:58px;
+    animation-duration:10s,3s;
+    animation-delay:-6s,-2s;
+}
+
+.date8{
+    left:88%;
+    width:60px;
+    height:88px;
+    animation-duration:16s,5s;
+    animation-delay:-8s,-3s;
+}
+
+.date9{
+    left:22%;
+    width:52px;
+    height:76px;
+    animation-duration:14s,4s;
+    animation-delay:-12s,-1s;
+}
+
+.date10{
+    left:70%;
+    width:32px;
+    height:50px;
+    animation-duration:9s,3s;
+    animation-delay:-3s,-1s;
+}
+
+@keyframes dateFly{
+
+    0%{
+        transform:
+            translate3d(0,115vh,0)
+            rotate(-20deg)
+            scale(.7);
+        opacity:0;
+    }
+
+    8%{
+        opacity:.75;
+    }
+
+    45%{
+        transform:
+            translate3d(70px,45vh,0)
+            rotate(30deg)
+            scale(1);
+    }
+
+    75%{
+        opacity:.65;
+    }
+
+    100%{
+        transform:
+            translate3d(-90px,-20vh,0)
+            rotate(160deg)
+            scale(.85);
+        opacity:0;
+    }
+}
+
+@keyframes dateRotate{
+
+    0%{
+        rotate:-12deg;
+    }
+
+    50%{
+        rotate:12deg;
+    }
+
+    100%{
+        rotate:-8deg;
+    }
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.particle{
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:#f6c453;
+
+    box-shadow:
+        0 0 15px
+        rgba(246,196,83,.9);
+
+    animation:
+        particleFloat linear infinite;
+}
+
+.particle:nth-child(1){
+    left:8%;
+    animation-duration:9s;
+}
+
+.particle:nth-child(2){
+    left:20%;
+    animation-duration:13s;
+    animation-delay:2s;
+}
+
+.particle:nth-child(3){
+    left:34%;
+    animation-duration:11s;
+    animation-delay:4s;
+}
+
+.particle:nth-child(4){
+    left:48%;
+    animation-duration:15s;
+    animation-delay:1s;
+}
+
+.particle:nth-child(5){
+    left:62%;
+    animation-duration:10s;
+    animation-delay:3s;
+}
+
+.particle:nth-child(6){
+    left:75%;
+    animation-duration:14s;
+    animation-delay:5s;
+}
+
+.particle:nth-child(7){
+    left:88%;
+    animation-duration:12s;
+    animation-delay:2s;
+}
+
+@keyframes particleFloat{
+
+    0%{
+        transform:
+            translateY(110vh)
+            scale(.3);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    80%{
+        opacity:.5;
+    }
+
+    100%{
+        transform:
+            translateY(-10vh)
+            scale(1.2);
+        opacity:0;
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    width:100%;
+
+    padding:18px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:
+        1px solid var(--border);
+
+    background:
+        rgba(10,5,2,.48);
+
+    backdrop-filter:blur(15px);
+
+    position:sticky;
+    top:0;
+
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:var(--gold);
+
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo-icon{
+    width:44px;
+    height:44px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            #a96813
+        );
+
+    color:#241205;
+
+    font-size:23px;
+
+    box-shadow:
+        0 5px 25px
+        rgba(246,196,83,.35);
+}
+
+.nav{
+    display:flex;
+    gap:22px;
+    align-items:center;
+}
+
+.nav a{
+    text-decoration:none;
+    color:#eee4d8;
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav a:hover{
+    color:var(--gold);
+}
+
+.header-status{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:14px;
+    color:#e9e1d5;
+}
+
+.status-dot{
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#25d366;
+
+    box-shadow:
+        0 0 15px
+        rgba(37,211,102,.9);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:
+        calc(100vh - 80px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:
+        70px 20px 90px;
+
+    position:relative;
+    z-index:1;
+}
+
+.hero-content{
+    width:100%;
+    max-width:950px;
+
+    text-align:center;
+
+    padding:60px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.11),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid
+        rgba(246,196,83,.3);
+
+    border-radius:35px;
+
+    backdrop-filter:blur(13px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        0 0 50px rgba(246,196,83,.06);
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:10px 20px;
+    margin-bottom:22px;
+
+    border-radius:50px;
+
+    color:var(--gold);
+
+    background:
+        rgba(246,196,83,.11);
+
+    border:
+        1px solid
+        rgba(246,196,83,.3);
+
+    font-size:14px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:
+        clamp(42px,7vw,78px);
+
+    color:var(--gold);
+
+    margin-bottom:18px;
+
+    line-height:1.2;
+
+    text-shadow:
+        0 5px 30px
+        rgba(0,0,0,.8);
+}
+
+.hero h1 span{
+    color:#fff;
+}
+
+.hero p{
+    max-width:700px;
+
+    margin:auto;
+
+    color:#eee4d8;
+
+    font-size:
+        clamp(18px,2.5vw,23px);
 
-            background-size: cover;
-            background-position: center;
-        }
+    line-height:1.9;
+}
 
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -1;
+.hero-buttons{
+    margin-top:32px;
 
-            background:
-                radial-gradient(
-                    circle at 50% 10%,
-                    rgba(246, 196, 83, .12),
-                    transparent 35%
-                );
-        }
+    display:flex;
+    justify-content:center;
 
-        /* =========================
-           الهيدر
-        ========================= */
+    gap:14px;
 
-        header {
-            width: 100%;
-            padding: 18px 16px 10px;
-            text-align: center;
-        }
+    flex-wrap:wrap;
+}
 
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+.main-btn,
+.whatsapp-main{
 
-            font-size: 24px;
-            font-weight: bold;
-            color: #f6c453;
+    border:none;
 
-            text-shadow: 0 3px 15px rgba(0,0,0,.6);
-        }
+    padding:15px 30px;
 
-        .logo span {
-            font-size: 30px;
-        }
+    border-radius:50px;
 
-        /* =========================
-           Hero
-        ========================= */
+    font-size:18px;
 
-        .hero {
-            min-height: 75vh;
+    font-weight:bold;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+    cursor:pointer;
 
-            text-align: center;
+    transition:.3s;
+}
 
-            padding: 30px 18px 60px;
-        }
+.main-btn{
 
-        .hero-badge {
-            display: inline-block;
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold2)
+        );
 
-            padding: 8px 18px;
-            margin-bottom: 18px;
+    color:#241205;
 
-            border: 1px solid rgba(246,196,83,.45);
-            border-radius: 50px;
+    box-shadow:
+        0 10px 30px
+        rgba(201,149,46,.3);
+}
 
-            background: rgba(246,196,83,.08);
+.main-btn:hover{
+    transform:
+        translateY(-4px);
+}
 
-            color: #f6c453;
-            font-size: 14px;
-            font-weight: bold;
+.whatsapp-main{
 
-            backdrop-filter: blur(8px);
-        }
+    display:inline-flex;
 
-        .hero h1 {
-            font-size: clamp(40px, 12vw, 68px);
+    align-items:center;
 
-            line-height: 1.2;
+    justify-content:center;
 
-            color: #f6c453;
+    gap:8px;
 
-            margin-bottom: 16px;
+    background:
+        rgba(37,211,102,.12);
 
-            text-shadow:
-                0 4px 20px rgba(0,0,0,.7);
-        }
+    border:
+        1px solid
+        rgba(37,211,102,.45);
 
-        .hero h1 span {
-            display: block;
+    color:#62ed93;
 
-            color: white;
-            font-size: .42em;
+    text-decoration:none;
+}
 
-            margin-top: 8px;
-            font-weight: normal;
-        }
+/* =========================
+   STATS
+========================= */
 
-        .hero p {
-            max-width: 500px;
+.stats{
+    max-width:850px;
 
-            font-size: 18px;
-            line-height: 1.9;
+    margin:38px auto 0;
 
-            color: #eee;
+    display:grid;
 
-            margin-bottom: 28px;
-        }
+    grid-template-columns:
+        repeat(4,1fr);
 
-        /* =========================
-           الزر الرئيسي
-        ========================= */
+    gap:12px;
+}
 
-        .main-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+.stat{
+    padding:18px 10px;
 
-            width: min(100%, 330px);
+    border-radius:18px;
 
-            padding: 16px 25px;
+    background:
+        rgba(0,0,0,.23);
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #e6ad32,
-                    #b87914
-                );
+    border:
+        1px solid
+        rgba(255,255,255,.08);
 
-            color: #fff;
+    text-align:center;
+}
 
-            text-decoration: none;
+.stat strong{
+    display:block;
 
-            border-radius: 50px;
+    color:var(--gold);
 
-            font-size: 18px;
-            font-weight: bold;
+    font-size:22px;
 
-            box-shadow:
-                0 10px 30px rgba(0,0,0,.4),
-                0 0 25px rgba(201,149,46,.18);
+    margin-bottom:5px;
+}
 
-            transition: .25s;
+.stat span{
+    font-size:12px;
+    color:#d9d0c5;
+}
 
-            border: 1px solid rgba(255,255,255,.15);
-        }
+/* =========================
+   SECTIONS
+========================= */
 
-        .main-btn:active {
-            transform: scale(.96);
-        }
+.section{
+    padding:90px 6%;
 
-        /* =========================
-           قسم المنتجات
-        ========================= */
+    position:relative;
 
-        #products {
-            padding: 35px 14px 100px;
-        }
+    z-index:2;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 28px;
-        }
+.section-head{
+    text-align:center;
 
-        .section-title small {
-            display: block;
+    max-width:750px;
 
-            color: #f6c453;
+    margin:
+        0 auto 42px;
+}
 
-            font-size: 14px;
+.section-head .eyebrow{
+    color:var(--gold);
 
-            margin-bottom: 7px;
-        }
+    font-weight:bold;
 
-        .section-title h2 {
-            font-size: 30px;
-            color: white;
-        }
+    font-size:14px;
 
-        .section-title .line {
-            width: 80px;
-            height: 3px;
+    margin-bottom:10px;
+}
 
-            margin: 12px auto 0;
+.section-head h2{
+    font-size:
+        clamp(30px,5vw,48px);
 
-            border-radius: 10px;
+    margin-bottom:12px;
+}
 
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    #f6c453,
-                    transparent
-                );
-        }
+.section-head p{
+    color:#cfc4b8;
 
-        /* =========================
-           شبكة المنتجات
-        ========================= */
+    line-height:1.9;
+}
 
-        .products {
-            width: 100%;
-            max-width: 700px;
+/* =========================
+   ABOUT
+========================= */
 
-            margin: auto;
+.about-grid{
+    max-width:1100px;
 
-            display: grid;
-            grid-template-columns: 1fr;
+    margin:auto;
 
-            gap: 20px;
-        }
+    display:grid;
 
-        /* =========================
-           كارت المنتج
-        ========================= */
+    grid-template-columns:
+        1fr 1fr;
 
-        .product-card {
-            position: relative;
+    gap:22px;
+}
 
-            overflow: hidden;
+.info-card{
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,.10),
-                    rgba(255,255,255,.035)
-                );
+    padding:32px;
 
-            border: 1px solid rgba(246,196,83,.20);
+    border-radius:28px;
 
-            border-radius: 24px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
 
-            padding: 12px;
+    border:
+        1px solid
+        var(--border);
 
-            box-shadow:
-                0 15px 40px rgba(0,0,0,.38);
+    backdrop-filter:blur(10px);
+}
 
-            backdrop-filter: blur(10px);
+.info-card h3{
+    color:var(--gold);
 
-            animation: cardShow .7s ease both;
-        }
+    margin-bottom:12px;
 
-        .product-card:nth-child(2) {
-            animation-delay: .08s;
-        }
+    font-size:25px;
+}
 
-        .product-card:nth-child(3) {
-            animation-delay: .16s;
-        }
+.info-card p{
+    color:#ded5cb;
 
-        .product-card:nth-child(4) {
-            animation-delay: .24s;
-        }
+    line-height:2;
+}
 
-        /* =========================
-           صورة المنتج
-        ========================= */
+.checks{
+    display:grid;
 
-        .image-wrapper {
-            position: relative;
+    gap:12px;
 
-            width: 100%;
+    margin-top:18px;
+}
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #2b1608,
-                    #120803
-                );
+.check{
 
-            border-radius: 18px;
+    padding:13px;
 
-            overflow: hidden;
-        }
+    border-radius:15px;
 
-        .product-image {
-            display: block;
+    background:
+        rgba(0,0,0,.18);
 
-            width: 100%;
-            height: 280px;
+    color:#eee4d8;
+}
 
-            object-fit: contain;
+.check b{
+    color:var(--gold);
+}
 
-            padding: 8px;
+/* =========================
+   PRODUCTS
+========================= */
 
-            transition: .4s;
-        }
+.products-section{
+    background:
+        rgba(0,0,0,.12);
+}
 
-        .product-card:active .product-image {
-            transform: scale(1.03);
-        }
+.products-grid{
 
-        .quality-badge {
-            position: absolute;
+    max-width:1100px;
 
-            top: 12px;
-            right: 12px;
+    margin:auto;
 
-            padding: 7px 11px;
+    display:grid;
 
-            border-radius: 30px;
+    grid-template-columns:
+        repeat(2,1fr);
 
-            background: rgba(0,0,0,.7);
+    gap:24px;
+}
 
-            border: 1px solid rgba(246,196,83,.4);
+.product-card{
 
-            color: #f6c453;
+    overflow:hidden;
 
-            font-size: 12px;
-            font-weight: bold;
-        }
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.035)
+        );
 
-        /* =========================
-           تفاصيل المنتج
-        ========================= */
+    border:
+        1px solid
+        var(--border);
 
-        .product-details {
-            padding: 18px 6px 6px;
+    border-radius:28px;
 
-            text-align: right;
-        }
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.35);
 
-        .product-title {
-            font-size: 23px;
+    transition:.35s;
 
-            color: #f6c453;
+    position:relative;
+}
 
-            margin-bottom: 15px;
+.product-card:hover{
 
-            text-align: center;
-        }
+    border-color:
+        rgba(246,196,83,.55);
 
-        .info-list {
-            display: flex;
-            flex-direction: column;
+    transform:
+        translateY(-5px);
 
-            gap: 8px;
-        }
+    box-shadow:
+        0 30px 65px
+        rgba(0,0,0,.55);
+}
 
-        .info {
-            display: flex;
-            align-items: center;
+.product-image-box{
 
-            gap: 10px;
+    position:relative;
 
-            padding: 11px 12px;
+    width:100%;
 
-            border-radius: 13px;
+    padding:18px;
 
-            background: rgba(255,255,255,.055);
+    background:
+        radial-gradient(
+            circle,
+            rgba(246,196,83,.12),
+            transparent 65%
+        );
 
-            color: #eee;
+    text-align:center;
+}
 
-            font-size: 15px;
-        }
+.product-image{
 
-        .info-icon {
-            width: 34px;
-            height: 34px;
+    width:100%;
 
-            min-width: 34px;
+    height:300px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    object-fit:contain;
 
-            border-radius: 50%;
+    border-radius:20px;
 
-            background: rgba(201,149,46,.15);
+    cursor:zoom-in;
 
-            font-size: 17px;
-        }
+    filter:
+        drop-shadow(
+            0 15px 25px
+            rgba(0,0,0,.45)
+        );
 
-        .info strong {
-            color: #f6c453;
-        }
+    transition:.4s;
+}
 
-        /* =========================
-           زر واتساب
-        ========================= */
+.product-card:hover
+.product-image{
+    transform:scale(1.05);
+}
 
-        .whatsapp {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.product-placeholder{
 
-            gap: 9px;
+    width:100%;
 
-            width: 100%;
+    height:300px;
 
-            margin-top: 14px;
+    display:flex;
 
-            padding: 14px;
+    align-items:center;
 
-            border-radius: 14px;
+    justify-content:center;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #25D366,
-                    #159947
-                );
+    font-size:100px;
 
-            color: white;
+    background:
+        radial-gradient(
+            circle,
+            rgba(246,196,83,.12),
+            transparent 65%
+        );
+}
 
-            text-decoration: none;
+.product-badge{
 
-            font-size: 17px;
-            font-weight: bold;
+    position:absolute;
 
-            box-shadow:
-                0 8px 20px rgba(0,0,0,.3);
+    top:25px;
+    right:25px;
 
-            transition: .2s;
-        }
+    padding:7px 13px;
 
-        .whatsapp:active {
-            transform: scale(.97);
-        }
+    border-radius:30px;
 
-        .whatsapp-icon {
-            font-size: 22px;
-        }
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            #a96813
+        );
 
-        /* =========================
-           جملة تسويقية
-        ========================= */
+    color:#241205;
 
-        .product-note {
-            text-align: center;
+    font-size:12px;
 
-            margin-top: 13px;
+    font-weight:bold;
 
-            color: #d9c8a1;
+    z-index:2;
+}
 
-            font-size: 13px;
+.product-content{
+    padding:
+        5px 22px 24px;
+}
 
-            line-height: 1.7;
-        }
+.product-top{
 
-        /* =========================
-           زر واتساب العائم
-        ========================= */
+    display:flex;
 
-        .floating-whatsapp {
-            position: fixed;
+    justify-content:
+        space-between;
 
-            left: 16px;
-            bottom: 18px;
+    align-items:center;
 
-            width: 58px;
-            height: 58px;
+    gap:10px;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.product-title{
+    color:var(--gold);
 
-            border-radius: 50%;
+    font-size:25px;
+}
 
-            background: #25D366;
+.stock{
 
-            color: white;
+    font-size:11px;
 
-            text-decoration: none;
+    color:#65e998;
 
-            font-size: 29px;
+    border:
+        1px solid
+        rgba(37,211,102,.3);
 
-            box-shadow:
-                0 7px 25px rgba(0,0,0,.45);
+    padding:5px 9px;
 
-            z-index: 999;
+    border-radius:20px;
+}
 
-            animation: pulse 2s infinite;
-        }
+.stock.out{
 
-        /* =========================
-           الفوتر
-        ========================= */
+    color:#ff7777;
 
-        footer {
-            padding: 35px 20px 100px;
+    border-color:
+        rgba(255,119,119,.35);
+}
 
-            text-align: center;
+.product-desc{
 
-            border-top:
-                1px solid rgba(255,255,255,.08);
+    color:#c9bfb3;
 
-            color: #aaa;
+    margin:
+        8px 0 15px;
 
-            font-size: 13px;
+    font-size:14px;
+}
 
-            line-height: 2;
-        }
+.product-details{
 
-        footer strong {
-            color: #f6c453;
-        }
+    display:flex;
 
-        /* =========================
-           أنيميشن
-        ========================= */
+    flex-direction:column;
 
-        @keyframes cardShow {
+    gap:10px;
+}
 
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
+.detail{
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    display:flex;
 
-        @keyframes pulse {
+    align-items:center;
 
-            0% {
-                box-shadow:
-                    0 0 0 0 rgba(37,211,102,.5),
-                    0 7px 25px rgba(0,0,0,.45);
-            }
+    gap:8px;
 
-            70% {
-                box-shadow:
-                    0 0 0 13px rgba(37,211,102,0),
-                    0 7px 25px rgba(0,0,0,.45);
-            }
+    padding:11px 13px;
 
-            100% {
-                box-shadow:
-                    0 0 0 0 rgba(37,211,102,0),
-                    0 7px 25px rgba(0,0,0,.45);
-            }
-        }
+    border-radius:14px;
 
-        /* =========================
-           شاشات أكبر
-        ========================= */
+    background:
+        rgba(0,0,0,.18);
 
-        @media (min-width: 650px) {
+    color:#e8dfd5;
 
-            .products {
-                grid-template-columns: repeat(2, 1fr);
-            }
+    font-size:15px;
+}
 
-            .product-image {
-                height: 250px;
-            }
+.detail strong{
+    color:var(--gold);
+}
 
-            .hero {
-                min-height: 70vh;
-            }
-        }
+.detail-icon{
 
-        /* =========================
-           تحسين الموبايل الصغير
-        ========================= */
+    width:27px;
+    height:27px;
 
-        @media (max-width: 360px) {
+    display:inline-flex;
 
-            .hero {
-                padding-top: 20px;
-            }
+    align-items:center;
+    justify-content:center;
 
-            .hero h1 {
-                font-size: 38px;
-            }
+    border-radius:50%;
 
-            .hero p {
-                font-size: 16px;
-            }
+    background:
+        rgba(246,196,83,.12);
+}
 
-            .product-image {
-                height: 240px;
-            }
+.price-box{
 
-            .product-title {
-                font-size: 21px;
-            }
+    margin:
+        14px 0 4px;
 
-            .info {
-                font-size: 14px;
-            }
-        }
+    padding:
+        14px 16px;
 
-    </style>
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(246,196,83,.15),
+            rgba(189,124,23,.06)
+        );
+
+    border:
+        1px solid
+        rgba(246,196,83,.35);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+        space-between;
+
+    gap:12px;
+}
+
+.price-label{
+
+    padding:
+        7px 11px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6c453,
+            #bd7c17
+        );
+
+    color:#241205;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+.product-price{
+
+    color:#fff;
+
+    font-size:22px;
+
+    font-weight:bold;
+}
+
+.product-actions{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:10px;
+
+    margin-top:16px;
+}
+
+.add-btn,
+.order-btn{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:13px;
+
+    border-radius:15px;
+
+    font-weight:bold;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+    border:0;
+}
+
+.add-btn{
+
+    border:
+        1px solid
+        rgba(246,196,83,.35);
+
+    background:
+        rgba(246,196,83,.1);
+
+    color:var(--gold);
+}
+
+.add-btn:hover{
+
+    background:var(--gold);
+
+    color:#241205;
+
+    transform:
+        translateY(-3px);
+}
+
+.order-btn{
+
+    background:
+        linear-gradient(
+            135deg,
+            #25d366,
+            #169b4a
+        );
+
+    color:#fff;
+}
+
+.order-btn:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 28px
+        rgba(37,211,102,.3);
+}
+
+.add-btn:disabled,
+.order-btn:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    transform:none!important;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty-msg{
+
+    grid-column:
+        1/-1;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#cfc4b8;
+
+    background:
+        rgba(0,0,0,.2);
+
+    border-radius:20px;
+
+    border:
+        1px solid
+        rgba(246,196,83,.12);
+}
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.review{
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(246,196,83,.18);
+}
+
+.stars{
+
+    color:var(--gold);
+
+    font-size:20px;
+
+    margin-bottom:12px;
+}
+
+.review p{
+
+    color:#ddd3c8;
+
+    line-height:1.9;
+}
+
+.review strong{
+
+    display:block;
+
+    margin-top:15px;
+
+    color:#fff;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:45px 25px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid
+        var(--border);
+}
+
+.contact-box h2{
+
+    font-size:36px;
+
+    color:var(--gold);
+
+    margin-bottom:12px;
+}
+
+.contact-box p{
+
+    color:#d6ccc1;
+
+    line-height:1.9;
+
+    margin-bottom:22px;
+}
+
+.contact-btn{
+
+    display:inline-flex;
+
+    padding:15px 28px;
+
+    border-radius:50px;
+
+    background:#25d366;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-btn{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:3000;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(246,196,83,.4);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold2)
+        );
+
+    color:#241205;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,.45);
+}
+
+.cart-count{
+
+    position:absolute;
+
+    top:-5px;
+    left:-5px;
+
+    min-width:23px;
+    height:23px;
+
+    padding:2px 6px;
+
+    border-radius:50%;
+
+    background:#e53935;
+
+    color:#fff;
+
+    font-size:12px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.cart-panel{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:10000;
+
+    display:none;
+
+    background:
+        rgba(0,0,0,.75);
+
+    backdrop-filter:
+        blur(6px);
+
+    padding:20px;
+}
+
+.cart-panel.show{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.cart-box{
+
+    width:
+        min(500px,100%);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    border-radius:28px;
+
+    background:#160a04;
+
+    border:
+        1px solid
+        var(--border);
+
+    padding:25px;
+
+    box-shadow:
+        0 30px 80px #000;
+}
+
+.cart-head{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.cart-head h2{
+    color:var(--gold);
+}
+
+.close-cart{
+
+    border:none;
+
+    background:
+        rgba(246,196,83,.12);
+
+    color:#fff;
+
+    border-radius:50%;
+
+    width:42px;
+    height:42px;
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+.cart-item{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px;
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    margin-bottom:10px;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info strong{
+    color:var(--gold);
+}
+
+.cart-item-info small{
+    display:block;
+    color:#c7bbae;
+    margin-top:5px;
+}
+
+.qty{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.qty button{
+
+    width:30px;
+    height:30px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        var(--border);
+
+    background:
+        rgba(246,196,83,.1);
+
+    color:var(--gold);
+
+    cursor:pointer;
+}
+
+.remove-item{
+
+    background:#a92929!important;
+
+    color:#fff!important;
+
+    border:none!important;
+}
+
+.cart-total{
+
+    margin-top:18px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:
+        rgba(246,196,83,.08);
+
+    color:var(--gold);
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    display:flex;
+
+    justify-content:
+        space-between;
+}
+
+.checkout{
+
+    width:100%;
+
+    margin-top:12px;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:#25d366;
+
+    color:#fff;
+
+    font-weight:bold;
+
+    font-size:16px;
+
+    cursor:pointer;
+}
+
+.checkout:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+}
+
+.cart-empty{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#c9bfb3;
+}
+
+.cart-form{
+
+    display:grid;
+
+    gap:10px;
+
+    margin-top:16px;
+}
+
+.cart-form input{
+
+    width:100%;
+
+    padding:13px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(246,196,83,.25);
+
+    background:
+        rgba(0,0,0,.3);
+
+    color:#fff;
+
+    outline:none;
+}
+
+.cart-form label{
+
+    font-size:13px;
+
+    color:#ddd;
+}
+
+/* =========================
+   IMAGE VIEWER
+========================= */
+
+.image-viewer{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:20000;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+
+    background:
+        rgba(0,0,0,.96);
+}
+
+.image-viewer.show{
+    display:flex;
+}
+
+.viewer-image{
+
+    max-width:95%;
+
+    max-height:90vh;
+
+    object-fit:contain;
+
+    border-radius:18px;
+}
+
+.viewer-close{
+
+    position:fixed;
+
+    top:20px;
+    right:20px;
+
+    width:48px;
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#bd7c17;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   FLOATING
+========================= */
+
+.floating-whatsapp{
+
+    position:fixed;
+
+    left:20px;
+    bottom:20px;
+
+    z-index:2999;
+
+    width:58px;
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#25d366;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:28px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.4);
+}
+
+.top-btn{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:90px;
+
+    z-index:2999;
+
+    width:45px;
+    height:45px;
+
+    border:
+        1px solid
+        rgba(246,196,83,.3);
+
+    border-radius:50%;
+
+    background:
+        rgba(20,10,4,.8);
+
+    color:var(--gold);
+
+    cursor:pointer;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+}
+
+.top-btn.show{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    border-top:
+        1px solid
+        rgba(246,196,83,.12);
+
+    color:#a99e91;
+
+    font-size:13px;
+
+    background:
+        rgba(0,0,0,.35);
+
+    position:relative;
+
+    z-index:2;
+}
+
+footer strong{
+    color:var(--gold);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+    header{
+        padding:14px 18px;
+    }
+
+    .nav{
+        display:none;
+    }
+
+    .header-status{
+        font-size:11px;
+    }
+
+    .hero{
+        padding:
+            35px 12px 55px;
+    }
+
+    .hero-content{
+        padding:
+            42px 18px;
+
+        border-radius:25px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .stats{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .section{
+        padding:65px 15px;
+    }
+
+    .about-grid,
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .reviews{
+        grid-template-columns:1fr;
+    }
+
+    .product-image,
+    .product-placeholder{
+        height:250px;
+    }
+
+    .product-content{
+        padding:
+            5px 16px 20px;
+    }
+
+    .product-title{
+        font-size:22px;
+    }
+
+    .product-actions{
+        grid-template-columns:1fr;
+    }
+
+    .floating-whatsapp{
+        left:15px;
+        bottom:15px;
+    }
+
+    .cart-btn{
+        right:15px;
+        bottom:15px;
+    }
+
+    .top-btn{
+        right:15px;
+        bottom:80px;
+    }
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .product-top{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .price-box{
+        padding:12px;
+    }
+
+    .product-price{
+        font-size:19px;
+    }
+}
+
+</style>
 </head>
-
 
 <body>
 
-    <!-- =========================
-         الهيدر
-    ========================== -->
+<div class="page-bg"></div>
 
-    <header>
+<div class="flying-dates">
+    <div class="flying-date date1"></div>
+    <div class="flying-date date2"></div>
+    <div class="flying-date date3"></div>
+    <div class="flying-date date4"></div>
+    <div class="flying-date date5"></div>
+    <div class="flying-date date6"></div>
+    <div class="flying-date date7"></div>
+    <div class="flying-date date8"></div>
+    <div class="flying-date date9"></div>
+    <div class="flying-date date10"></div>
+</div>
 
-        <div class="logo">
-            <span>🌴</span>
-            بلح آل عجلان
+<div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</div>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🌴
         </div>
 
-    </header>
+        <span>
+            تمور آل عجلان
+        </span>
+
+    </div>
+
+    <nav class="nav">
+
+        <a href="#home">
+            الرئيسية
+        </a>
+
+        <a href="#about">
+            عنّا
+        </a>
+
+        <a href="#products">
+            المنتجات
+        </a>
+
+        <a href="#reviews">
+            آراء العملاء
+        </a>
+
+        <a href="#contact">
+            تواصل معنا
+        </a>
+
+    </nav>
+
+    <div class="header-status">
+
+        <span class="status-dot"></span>
+
+        متاحين الآن
+
+    </div>
+
+</header>
 
 
-    <!-- =========================
-         الصفحة الرئيسية
-    ========================== -->
+<!-- =========================
+     HERO
+========================= -->
 
-    <section class="hero">
+<section class="hero" id="home">
+
+    <div class="hero-content">
 
         <div class="hero-badge">
-            ⭐ جودة نختارها لك بعناية
+            🌴 جودة من قلب الواحات
         </div>
 
         <h1>
-            بلح آل عجلان
-
-            <span>
-                طعم الطبيعة في كل حبة
-            </span>
+            تمور
+            <span>آل عجلان</span>
         </h1>
 
         <p>
-            بلح طبيعي بمذاق غني وحلاوة مميزة،
-            من أجود أنواع البلح من الوادي والواحات 🌴
+            أجود أنواع البلح والتمور،
+            مختارة بعناية لتوصلك بأفضل طعم
+            وأعلى جودة.
         </p>
 
-        <a href="#products" class="main-btn">
-            <span>🛒</span>
-            اكتشف منتجاتنا
-            <span>↓</span>
+        <div class="hero-buttons">
+
+            <a
+                href="#products"
+                class="main-btn"
+            >
+                🛒 تصفح المنتجات
+            </a>
+
+            <a
+                href="https://wa.me/201000000000"
+                target="_blank"
+                class="whatsapp-main"
+            >
+                💬 تواصل واتساب
+            </a>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong id="heroProductsCount">
+                    0
+                </strong>
+                <span>
+                    منتج
+                </span>
+            </div>
+
+            <div class="stat">
+                <strong>
+                    100%
+                </strong>
+                <span>
+                    جودة
+                </span>
+            </div>
+
+            <div class="stat">
+                <strong>
+                    ⭐
+                </strong>
+                <span>
+                    رضا العملاء
+                </span>
+            </div>
+
+            <div class="stat">
+                <strong>
+                    🚚
+                </strong>
+                <span>
+                    توصيل
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+    class="section"
+    id="about"
+>
+
+    <div class="section-head">
+
+        <div class="eyebrow">
+            من نحن
+        </div>
+
+        <h2>
+            طعم أصيل وجودة مضمونة
+        </h2>
+
+        <p>
+            في تمور آل عجلان نهتم بتقديم
+            أفضل أنواع البلح والتمور
+            بجودة ممتازة وأسعار مناسبة.
+        </p>
+
+    </div>
+
+    <div class="about-grid">
+
+        <div class="info-card">
+
+            <h3>
+                🌴 اختيار بعناية
+            </h3>
+
+            <p>
+                نختار منتجاتنا بعناية
+                ونحرص على تقديم التمور
+                بأفضل جودة ممكنة.
+            </p>
+
+            <div class="checks">
+
+                <div class="check">
+                    ✅ <b>جودة ممتازة</b>
+                    في كل منتج
+                </div>
+
+                <div class="check">
+                    📦 <b>تغليف آمن</b>
+                    للحفاظ على المنتج
+                </div>
+
+                <div class="check">
+                    🚚 <b>توصيل سريع</b>
+                    حسب المتاح
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="info-card">
+
+            <h3>
+                💛 هدفنا رضاك
+            </h3>
+
+            <p>
+                هدفنا إن كل طلب يوصلك
+                بالجودة والطعم اللي تتوقعه،
+                مع خدمة سهلة وسريعة.
+            </p>
+
+            <div class="checks">
+
+                <div class="check">
+                    ⭐ <b>أسعار واضحة</b>
+                    بدون تعقيد
+                </div>
+
+                <div class="check">
+                    💬 <b>خدمة عملاء</b>
+                    للتواصل والاستفسار
+                </div>
+
+                <div class="check">
+                    🛒 <b>طلب سهل</b>
+                    من خلال الموقع
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section
+    class="section products-section"
+    id="products"
+>
+
+    <div class="section-head">
+
+        <div class="eyebrow">
+            منتجاتنا
+        </div>
+
+        <h2>
+            اختار تمورك المفضلة 🌴
+        </h2>
+
+        <p>
+            الأسعار والمخزون يتم قراءتها
+            مباشرة من بيانات لوحة الإدارة.
+        </p>
+
+    </div>
+
+    <div
+        class="products-grid"
+        id="productsGrid"
+    >
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section
+    class="section"
+    id="reviews"
+>
+
+    <div class="section-head">
+
+        <div class="eyebrow">
+            آراء العملاء
+        </div>
+
+        <h2>
+            عملاؤنا يقولون
+        </h2>
+
+    </div>
+
+    <div class="reviews">
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                جودة ممتازة والطعم جميل جدًا،
+                والطلب كان سهل.
+            </p>
+
+            <strong>
+                عميل تمور آل عجلان
+            </strong>
+
+        </div>
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                البلح وصل بشكل ممتاز
+                والتغليف كويس جدًا.
+            </p>
+
+            <strong>
+                عميل تمور آل عجلان
+            </strong>
+
+        </div>
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                الأسعار واضحة والمنتج
+                يستاهل التجربة.
+            </p>
+
+            <strong>
+                عميل تمور آل عجلان
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+    class="section"
+    id="contact"
+>
+
+    <div class="contact-box">
+
+        <h2>
+            تواصل معنا 💬
+        </h2>
+
+        <p>
+            لو عندك أي استفسار عن المنتجات
+            أو الطلبات، تواصل معنا مباشرة.
+        </p>
+
+        <a
+            href="https://wa.me/201000000000"
+            target="_blank"
+            class="contact-btn"
+        >
+            💬 تواصل عبر واتساب
         </a>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         المنتجات
-    ========================== -->
+<!-- =========================
+     CART BUTTON
+========================= -->
 
-    <section id="products">
+<button
+    class="cart-btn"
+    onclick="openCart()"
+    aria-label="السلة"
+>
 
-        <div class="section-title">
+    🛒
 
-            <small>اختار الحجم المناسب لك</small>
+    <span
+        class="cart-count"
+        id="cartCount"
+    >
+        0
+    </span>
+
+</button>
+
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<a
+    class="floating-whatsapp"
+    href="https://wa.me/201000000000"
+    target="_blank"
+    aria-label="واتساب"
+>
+    💬
+</a>
+
+
+<!-- =========================
+     BACK TOP
+========================= -->
+
+<button
+    class="top-btn"
+    id="topBtn"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+>
+    ↑
+</button>
+
+
+<!-- =========================
+     CART PANEL
+========================= -->
+
+<div
+    class="cart-panel"
+    id="cartPanel"
+>
+
+    <div class="cart-box">
+
+        <div class="cart-head">
 
             <h2>
-                منتجاتنا 🌴
+                🛒 سلة الطلب
             </h2>
 
-            <div class="line"></div>
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+            >
+                ×
+            </button>
 
         </div>
 
-
-        <div class="products">
-
-
-            <!-- =========================
-                 المنتج الأول
-            ========================== -->
-
-            <article class="product-card">
-
-                <div class="image-wrapper">
-
-                    <span class="quality-badge">
-                        ⭐ جودة ممتازة
-                    </span>
-
-                    <img
-                        class="product-image"
-                        src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3Y2FlZmNmY2Y0ODE5MTkwMGY1NDJhNzY4ZjA0MWY6ZmlsZV8wMDAwMDAwMDY0M2M4MWY0YmJjYmIxMGIwMjJiMjVhMyIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc3IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiI4YmM5NzRkMjY0NDNiNDI1NzNmMWYxM2RkMTk3ZTA0ZWFjOGVjYjA3MTA3MmY1NDEwYzNkMmEwY2JmMjc3ZjRmIiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
-                        alt="بلح آل عجلان - 10 كيلو"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <h3 class="product-title">
-                        🌴 بلح العجلان
-                    </h3>
-
-
-                    <div class="info-list">
-
-                        <div class="info">
-
-                            <span class="info-icon">⚖️</span>
-
-                            <span>
-                                الوزن:
-                                <strong>10 كيلو</strong>
-                            </span>
-
-                        </div>
-
-
-                        <div class="info">
-
-                            <span class="info-icon">📍</span>
-
-                            <span>
-                                النوع:
-                                <strong>الوادي والواحات</strong>
-                            </span>
-
-                        </div>
-
-
-                        <div class="info">
-
-                            <span class="info-icon">⭐</span>
-
-                            <span>
-                                أجود أنواع البلح
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <a
-                        class="whatsapp"
-                        href="https://wa.me/201141013558"
-                        target="_blank"
-                        rel="noopener"
-                    >
-
-                        <span class="whatsapp-icon">🟢</span>
-
-                        اطلب الآن عبر واتساب
-
-                    </a>
-
-
-                    <p class="product-note">
-                        🌴 طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =========================
-                 المنتج الثاني
-            ========================== -->
-
-            <article class="product-card">
-
-                <div class="image-wrapper">
-
-                    <span class="quality-badge">
-                        ⭐ جودة ممتازة
-                    </span>
-
-                    <img
-                        class="product-image"
-                        src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3Y2IwMTQ3ZDkwODE5MWI3MDU5NzYxNmM2ZDBjZDk6ZmlsZV8wMDAwMDAwMDNhMmM4MWY0YTBjYmEzZWU5ZWVjOTk2ZiIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc3IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiI1YjU5OGIzNjIwYTlmMjIxZjU5NmI5YTEyOWQ0MWFkYjA5OTU5MzMzYTMwNTk0MmIyNTBjZDkzZDhlYzU2OTViIiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
-                        alt="بلح آل عجلان - 5 كيلو"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <h3 class="product-title">
-                        🌴 بلح العجلان
-                    </h3>
-
-
-                    <div class="info-list">
-
-                        <div class="info">
-
-                            <span class="info-icon">⚖️</span>
-
-                            <span>
-                                الوزن:
-                                <strong>5 كيلو</strong>
-                            </span>
-
-                        </div>
-
-
-                        <div class="info">
-
-                            <span class="info-icon">📍</span>
-
-                            <span>
-                                النوع:
-                                <strong>الوادي والواحات</strong>
-                            </span>
-
-                        </div>
-
-
-                        <div class="info">
-
-                            <span class="info-icon">⭐</span>
-
-                            <span>
-                                أجود أنواع البلح
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <a
-                        class="whatsapp"
-                        href="https://wa.me/201141013558"
-                        target="_blank"
-                        rel="noopener"
-                    >
-
-                        <span class="whatsapp-icon">🟢</span>
-
-                        اطلب الآن عبر واتساب
-
-                    </a>
-
-
-                    <p class="product-note">
-                        🌴 طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =========================
-                 المنتج الثالث
-            ========================== -->
-
-            <article class="product-card">
-
-                <div class="image-wrapper">
-
-                    <span class="quality-badge">
-                        ⭐ جودة ممتازة
-                    </span>
-
-                    <img
-                        class="product-image"
-                        src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3Y2FhYjRhOTQ4ODE5MTkyNjcwMjc2YWM0NzdkZWU6ZmlsZV8wMDAwMDAwMGZmMWM4MWY0YTAzNzE0YzRhZWIyMjExYSIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc3IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiJkNjA0ZmFjMmYxYmFmYjQwZDY5ZDE3MzhjZDAzN2ExY2ZhOTdmMjg1ODJiMDU1OTRjOGY0MTRiYjQ5ZmEzZDkwIiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
-                        alt="بلح آل عجلان - 2200 كيلو"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <h3 class="product-title">
-                        🌴 بلح العجلان
-                    </h3>
-
-
-                    <div class="info-list">
-
-                        <div class="info">
-
-                            <span class="info-icon">⚖️</span>
-
-                            <span>
-                                الوزن:
-                                <strong>2,200 كيلو</strong>
-                            </span>
-
-                        </div>
-
-
-                        <div class="info">
-
-                            <span class="info-icon">📍</span>
-
-                            <span>
-                                النوع:
-                                <strong>الوادي والواحات</strong>
-                            </span>
-
-                        </div>
-
-
-                        <div class="info">
-
-                            <span class="info-icon">⭐</span>
-
-                            <span>
-                                أجود أنواع البلح
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <a
-                        class="whatsapp"
-                        href="https://wa.me/201141013558"
-                        target="_blank"
-                        rel="noopener"
-                    >
-
-                        <span class="whatsapp-icon">🟢</span>
-
-                        اطلب الآن عبر واتساب
-
-                    </a>
-
-
-                    <p class="product-note">
-                        🌴 طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =========================
-                 المنتج الرابع
-            ========================== -->
-
-            <article class="product-card">
-
-                <div class="image-wrapper">
-
-                    <span class="quality-badge">
-                        ⭐ جودة ممتازة
-                    </span>
-
-                    <img
-                        class="product-image"
-                        src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3Y2FkMTlmZmI0ODE5MWE2OGI4OTM3NmNkZDZlZTg6ZmlsZV8wMDAwMDAwMDgzZTA4MjBhODkyMGY0ZmExYmUzNzQ3NCIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc3IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiJkMGVmYmE2OGYxMTg3OTZjYTdjMWZiOTQyMmJhODU5MmU3ZGU2NWFkMWU3NDI5ZjQzOTE3YWIzMDcwNzA2YzhmIiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
-                        alt="بلح آل عجلان - 1400 كيلو"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <h3 class="product-title">
-                        🌴 بلح العجلان
-                    </h3>
-
-
-                    <div class="info-list">
-
-                        <div class="info">
-
-                            <span class="info-icon">⚖️</span>
-
-                            <span>
-                                الوزن:
-                                <strong>1400 كيلو</strong>
-                            </span>
-
-                        </div>
-
-
-                        <div class="info">
-
-                            <span class="info-icon">📍</span>
-
-                            <span>
-                                النوع:
-                                <strong>الوادي والواحات</strong>
-                            </span>
-
-                        </div>
-
-
-                        <div class="info">
-
-                            <span class="info-icon">⭐</span>
-
-                            <span>
-                                أجود أنواع البلح
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <a
-                        class="whatsapp"
-                        href="https://wa.me/201141013558"
-                        target="_blank"
-                        rel="noopener"
-                    >
-
-                        <span class="whatsapp-icon">🟢</span>
-
-                        اطلب الآن عبر واتساب
-
-                    </a>
-
-
-                    <p class="product-note">
-                        🌴 طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =========================
-                 المنتج الخامس
-            ========================== -->
-
-            <article class="product-card">
-
-                <div class="image-wrapper">
-
-                    <span class="quality-badge">
-                        ⭐ جودة ممتازة
-                    </span>
-
-                    <img
-                        class="product-image"
-                        src="https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNmE3Y2FlMWMwMTJjODE5MTg5ZmRkYjVkYWI3NTZlY2I6ZmlsZV8wMDAwMDAwMDdiNjQ4MWY0YjMzYmE3YzU3NGQxNTE4NSIsImdpem1vX2lkIjpudWxsLCJ3aWQiOm51bGwsIm9pZCI6bnVsbCwic2lkIjpudWxsLCJjcyI6bnVsbCwiZm4iOm51bGwsImNkIjpudWxsLCJ0cyI6IjIwNjc3IiwicCI6InB5aSIsImNpZCI6IjEiLCJzaWciOiI3NzlhNDI1NWIzNWQ4YzEwYWYwODliNWM4MWI4YmYyNTYwMmI3YWEzNGFmNmUwYTk2YzliYjFmYTZiMDEwM2U5IiwidiI6IjAiLCJjZG4iOm51bGwsImNwIjpudWxsLCJtYSI6bnVsbH0="
-                        alt="بلح آل عجلان - 700 جرام"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <h3 class="product-title">
-                        🌴 بلح العجلان
-                    </h3>
-
-
-                    <div class="info-list">
-
-                        <div class="info">
-
-                            <span class="info-icon">⚖️</span>
-
-                            <span>
-                                الوزن:
-                                <strong>700 جرام</strong>
-                            </span>
-
-                        </div>
-
-
-                        <div class="info">
-
-                            <span class="info-icon">📍</span>
-
-                            <span>
-                                النوع:
-                                <strong>الوادي والواحات</strong>
-                            </span>
-
-                        </div>
-
-
-                        <div class="info">
-
-                            <span class="info-icon">⭐</span>
-
-                            <span>
-                                أجود أنواع البلح
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <a
-                        class="whatsapp"
-                        href="https://wa.me/201141013558"
-                        target="_blank"
-                        rel="noopener"
-                    >
-
-                        <span class="whatsapp-icon">🟢</span>
-
-                        اطلب الآن عبر واتساب
-
-                    </a>
-
-
-                    <p class="product-note">
-                        🌴 طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
-                    </p>
-
-                </div>
-
-            </article>
+        <div id="cartItems"></div>
+
+        <div
+            class="cart-total"
+            id="cartTotal"
+        >
+            <span>
+                الإجمالي
+            </span>
+
+            <span>
+                0 جنيه
+            </span>
+        </div>
+
+        <div class="cart-form">
+
+            <label>
+                الاسم
+            </label>
+
+            <input
+                id="customerName"
+                type="text"
+                placeholder="اكتب اسمك"
+            >
+
+            <label>
+                رقم الهاتف
+            </label>
+
+            <input
+                id="customerPhone"
+                type="tel"
+                placeholder="مثال: 01000000000"
+            >
+
+            <label>
+                العنوان
+            </label>
+
+            <input
+                id="customerAddress"
+                type="text"
+                placeholder="اكتب عنوان التوصيل"
+            >
 
         </div>
 
-    </section>
+        <button
+            class="checkout"
+            id="checkoutBtn"
+            onclick="checkout()"
+        >
+            ✅ تأكيد الطلب
+        </button>
+
+    </div>
+
+</div>
 
 
-    <!-- =========================
-         واتساب عائم
-    ========================== -->
+<!-- =========================
+     IMAGE VIEWER
+========================= -->
 
-    <a
-        class="floating-whatsapp"
-        href="https://wa.me/201141013558"
-        target="_blank"
-        rel="noopener"
-        aria-label="تواصل معنا عبر واتساب"
+<div
+    class="image-viewer"
+    id="imageViewer"
+    onclick="closeImageViewer()"
+>
+
+    <button
+        class="viewer-close"
+        onclick="closeImageViewer()"
     >
-        ☎
-    </a>
+        ×
+    </button>
+
+    <img
+        class="viewer-image"
+        id="viewerImage"
+        src=""
+        alt="صورة المنتج"
+        onclick="event.stopPropagation()"
+    >
+
+</div>
 
 
-    <!-- =========================
-         الفوتر
-    ========================== -->
+<!-- =========================
+     FOOTER
+========================= -->
 
-    <footer>
+<footer>
 
-        <div>
-            🌴 <strong>بلح آل عجلان</strong>
-        </div>
+    © 2026
 
-        <div>
-            طعم طبيعي • جودة ممتازة • حلاوة لا تُقاوم
-        </div>
+    <strong>
+        تمور آل عجلان
+    </strong>
 
-        <div>
-            © 2026 جميع الحقوق محفوظة
-        </div>
+    - جميع الحقوق محفوظة
 
-    </footer>
+</footer>
+
+
+<script>
+
+/* =====================================================
+   SETTINGS
+===================================================== */
+
+const PRODUCTS_KEY =
+    "alaglan_products";
+
+const ORDERS_KEY =
+    "alaglan_orders";
+
+const CART_KEY =
+    "alaglan_cart";
+
+
+/* =====================================================
+   ELEMENT
+===================================================== */
+
+function el(id){
+
+    return document.getElementById(id);
+
+}
+
+
+/* =====================================================
+   DEFAULT PRODUCTS
+===================================================== */
+
+const defaultProducts = [
+
+    {
+        id:1,
+        name:"بلح سيوي",
+        weight:"5 كيلو",
+        price:450,
+        badge:"الأكثر طلبًا",
+        image:"",
+        stock:50,
+        active:true
+    },
+
+    {
+        id:2,
+        name:"بلح واحات",
+        weight:"5 كيلو",
+        price:500,
+        badge:"عرض خاص",
+        image:"",
+        stock:35,
+        active:true
+    },
+
+    {
+        id:3,
+        name:"بلح فاخر",
+        weight:"10 كيلو",
+        price:850,
+        badge:"فاخر",
+        image:"",
+        stock:20,
+        active:true
+    },
+
+    {
+        id:4,
+        name:"تمور آل عجلان",
+        weight:"10 كيلو",
+        price:950,
+        badge:"مميز",
+        image:"",
+        stock:15,
+        active:true
+    }
+
+];
+
+
+/* =====================================================
+   GET PRODUCTS
+===================================================== */
+
+function getProducts(){
+
+    const saved =
+        localStorage.getItem(
+            PRODUCTS_KEY
+        );
+
+    if(!saved){
+
+        localStorage.setItem(
+            PRODUCTS_KEY,
+            JSON.stringify(defaultProducts)
+        );
+
+        return [...defaultProducts];
+
+    }
+
+    try{
+
+        const products =
+            JSON.parse(saved);
+
+        return Array.isArray(products)
+            ? products
+            : [];
+
+    }
+    catch{
+
+        localStorage.setItem(
+            PRODUCTS_KEY,
+            JSON.stringify(defaultProducts)
+        );
+
+        return [...defaultProducts];
+
+    }
+
+}
+
+
+/* =====================================================
+   GET ORDERS
+===================================================== */
+
+function getOrders(){
+
+    const saved =
+        localStorage.getItem(
+            ORDERS_KEY
+        );
+
+    if(!saved){
+        return [];
+    }
+
+    try{
+
+        const orders =
+            JSON.parse(saved);
+
+        return Array.isArray(orders)
+            ? orders
+            : [];
+
+    }
+    catch{
+
+        return [];
+
+    }
+
+}
+
+
+/* =====================================================
+   CART
+===================================================== */
+
+function getCart(){
+
+    const saved =
+        localStorage.getItem(
+            CART_KEY
+        );
+
+    if(!saved){
+        return [];
+    }
+
+    try{
+
+        const cart =
+            JSON.parse(saved);
+
+        return Array.isArray(cart)
+            ? cart
+            : [];
+
+    }
+    catch{
+
+        return [];
+
+    }
+
+}
+
+
+function saveCart(cart){
+
+    localStorage.setItem(
+        CART_KEY,
+        JSON.stringify(cart)
+    );
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHtml(value){
+
+    return String(
+        value ?? ""
+    )
+
+    .replaceAll(
+        "&",
+        "&amp;"
+    )
+
+    .replaceAll(
+        "<",
+        "&lt;"
+    )
+
+    .replaceAll(
+        ">",
+        "&gt;"
+    )
+
+    .replaceAll(
+        '"',
+        "&quot;"
+    )
+
+    .replaceAll(
+        "'",
+        "&#039;"
+    );
+
+}
+
+
+/* =====================================================
+   IMAGE VALIDATION
+===================================================== */
+
+function isValidImage(url){
+
+    if(!url){
+        return false;
+    }
+
+    return /^https?:\/\//i.test(
+        String(url).trim()
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PRODUCTS
+===================================================== */
+
+function loadProducts(){
+
+    const products =
+        getProducts()
+        .filter(
+            product =>
+                product.active === true
+        );
+
+    const box =
+        el("productsGrid");
+
+    el("heroProductsCount")
+        .textContent =
+        products.length;
+
+    if(products.length === 0){
+
+        box.innerHTML = `
+
+            <div class="empty-msg">
+
+                🌴
+
+                <br><br>
+
+                لا توجد منتجات متاحة
+                حاليًا.
+
+                <br>
+
+                يرجى العودة لاحقًا.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    box.innerHTML =
+        products.map(
+            renderProduct
+        ).join("");
+
+}
+
+
+/* =====================================================
+   RENDER PRODUCT
+===================================================== */
+
+function renderProduct(product){
+
+    const stock =
+        Math.max(
+            0,
+            Number(product.stock) || 0
+        );
+
+    const price =
+        Number(product.price) || 0;
+
+    const outOfStock =
+        stock <= 0;
+
+    const image =
+        isValidImage(product.image)
+        ? `
+
+            <img
+                class="product-image"
+                src="${escapeHtml(product.image)}"
+                alt="${escapeHtml(product.name)}"
+                onclick="openImageViewer('${escapeHtml(product.image)}')"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            >
+
+            <div
+                class="product-placeholder"
+                style="display:none"
+            >
+                🌴
+            </div>
+
+        `
+        :
+        `
+
+            <div class="product-placeholder">
+                🌴
+            </div>
+
+        `;
+
+
+    return `
+
+        <article
+            class="product-card"
+        >
+
+            ${
+                product.badge
+                ?
+                `
+                    <div class="product-badge">
+                        ${escapeHtml(product.badge)}
+                    </div>
+                `
+                :
+                ""
+            }
+
+            <div class="product-image-box">
+
+                ${image}
+
+            </div>
+
+            <div class="product-content">
+
+                <div class="product-top">
+
+                    <h3 class="product-title">
+
+                        🌴
+
+                        ${escapeHtml(product.name)}
+
+                    </h3>
+
+                    <span
+                        class="stock ${
+                            outOfStock
+                            ? "out"
+                            : ""
+                        }"
+                    >
+
+                        ${
+                            outOfStock
+                            ?
+                            "غير متوفر"
+                            :
+                            `متوفر: ${stock}`
+                        }
+
+                    </span>
+
+                </div>
+
+                <p class="product-desc">
+
+                    ${escapeHtml(product.name)}
+
+                    - جودة ممتازة وطعم أصيل.
+
+                </p>
+
+                <div class="product-details">
+
+                    <div class="detail">
+
+                        <span class="detail-icon">
+                            ⚖️
+                        </span>
+
+                        الوزن:
+
+                        <strong>
+                            ${escapeHtml(product.weight)}
+                        </strong>
+
+                    </div>
+
+                    <div class="detail">
+
+                        <span class="detail-icon">
+                            📦
+                        </span>
+
+                        المخزون:
+
+                        <strong>
+                            ${stock}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="price-box">
+
+                    <span class="price-label">
+                        السعر
+                    </span>
+
+                    <span class="product-price">
+
+                        ${price}
+
+                        جنيه
+
+                    </span>
+
+                </div>
+
+                <div class="product-actions">
+
+                    <button
+                        class="add-btn"
+                        ${
+                            outOfStock
+                            ? "disabled"
+                            : ""
+                        }
+                        onclick="addToCart(${Number(product.id)})"
+                    >
+
+                        🛒
+
+                        ${
+                            outOfStock
+                            ?
+                            "غير متوفر"
+                            :
+                            "أضف للسلة"
+                        }
+
+                    </button>
+
+                    <button
+                        class="order-btn"
+                        ${
+                            outOfStock
+                            ? "disabled"
+                            : ""
+                        }
+                        onclick="quickOrder(${Number(product.id)})"
+                    >
+
+                        ⚡ اطلب الآن
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    `;
+
+}
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+function addToCart(id){
+
+    const products =
+        getProducts();
+
+    const product =
+        products.find(
+            item =>
+                Number(item.id) ===
+                Number(id)
+        );
+
+    if(!product){
+        alert("❌ المنتج غير موجود");
+        return;
+    }
+
+    const stock =
+        Number(product.stock) || 0;
+
+    if(stock <= 0){
+
+        alert(
+            "❌ هذا المنتج غير متوفر حاليًا"
+        );
+
+        return;
+
+    }
+
+
+    const cart =
+        getCart();
+
+    const existing =
+        cart.find(
+            item =>
+                Number(item.product_id) ===
+                Number(id)
+        );
+
+
+    if(existing){
+
+        if(
+            existing.quantity >=
+            stock
+        ){
+
+            alert(
+                "⚠️ لا يمكن إضافة كمية أكبر من المخزون"
+            );
+
+            return;
+
+        }
+
+        existing.quantity++;
+
+    }
+    else{
+
+        cart.push({
+
+            product_id:
+                Number(product.id),
+
+            product_name:
+                product.name,
+
+            price:
+                Number(product.price) || 0,
+
+            weight:
+                product.weight,
+
+            quantity:1
+
+        });
+
+    }
+
+
+    saveCart(cart);
+
+    updateCartCount();
+
+    alert(
+        "✅ تمت إضافة المنتج للسلة"
+    );
+
+}
+
+
+/* =====================================================
+   QUICK ORDER
+===================================================== */
+
+function quickOrder(id){
+
+    addToCart(id);
+
+    openCart();
+
+}
+
+
+/* =====================================================
+   UPDATE CART COUNT
+===================================================== */
+
+function updateCartCount(){
+
+    const cart =
+        getCart();
+
+    const count =
+        cart.reduce(
+            (
+                total,
+                item
+            ) =>
+                total +
+                Number(item.quantity || 0),
+            0
+        );
+
+    el("cartCount")
+        .textContent =
+        count;
+
+}
+
+
+/* =====================================================
+   OPEN CART
+===================================================== */
+
+function openCart(){
+
+    el("cartPanel")
+        .classList.add("show");
+
+    document.body
+        .classList.add("no-scroll");
+
+    renderCart();
+
+}
+
+
+/* =====================================================
+   CLOSE CART
+===================================================== */
+
+function closeCart(){
+
+    el("cartPanel")
+        .classList.remove("show");
+
+    document.body
+        .classList.remove("no-scroll");
+
+}
+
+
+/* =====================================================
+   RENDER CART
+===================================================== */
+
+function renderCart(){
+
+    const cart =
+        getCart();
+
+    const box =
+        el("cartItems");
+
+    const checkout =
+        el("checkoutBtn");
+
+
+    if(cart.length === 0){
+
+        box.innerHTML = `
+
+            <div class="cart-empty">
+
+                🛒
+
+                <br><br>
+
+                السلة فارغة حاليًا.
+
+                <br>
+
+                أضف بعض المنتجات أولًا.
+
+            </div>
+
+        `;
+
+        checkout.disabled =
+            true;
+
+        el("cartTotal")
+            .innerHTML = `
+
+                <span>
+                    الإجمالي
+                </span>
+
+                <span>
+                    0 جنيه
+                </span>
+
+            `;
+
+        return;
+
+    }
+
+
+    checkout.disabled =
+        false;
+
+
+    let total = 0;
+
+
+    box.innerHTML =
+        cart.map(
+            function(item){
+
+                const itemTotal =
+                    Number(item.price || 0) *
+                    Number(item.quantity || 0);
+
+                total += itemTotal;
+
+
+                return `
+
+                    <div class="cart-item">
+
+                        <div class="cart-item-info">
+
+                            <strong>
+                                ${escapeHtml(item.product_name)}
+                            </strong>
+
+                            <small>
+                                ${escapeHtml(item.weight || "")}
+                            </small>
+
+                            <small>
+                                ${Number(item.price || 0)}
+                                جنيه ×
+                                ${Number(item.quantity || 0)}
+                            </small>
+
+                        </div>
+
+                        <div class="qty">
+
+                            <button
+                                onclick="changeQuantity(${Number(item.product_id)},1)"
+                            >
+                                +
+                            </button>
+
+                            <strong>
+                                ${Number(item.quantity || 0)}
+                            </strong>
+
+                            <button
+                                onclick="changeQuantity(${Number(item.product_id)},-1)"
+                            >
+                                -
+                            </button>
+
+                            <button
+                                class="remove-item"
+                                onclick="removeFromCart(${Number(item.product_id)})"
+                            >
+                                ×
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+        ).join("");
+
+
+    el("cartTotal")
+        .innerHTML = `
+
+            <span>
+                الإجمالي
+            </span>
+
+            <span>
+                ${total}
+                جنيه
+            </span>
+
+        `;
+
+}
+
+
+/* =====================================================
+   CHANGE QUANTITY
+===================================================== */
+
+function changeQuantity(
+    id,
+    change
+){
+
+    const cart =
+        getCart();
+
+    const item =
+        cart.find(
+            product =>
+                Number(product.product_id) ===
+                Number(id)
+        );
+
+    if(!item){
+        return;
+    }
+
+
+    const products =
+        getProducts();
+
+    const product =
+        products.find(
+            product =>
+                Number(product.id) ===
+                Number(id)
+        );
+
+    if(!product){
+        return;
+    }
+
+
+    const stock =
+        Number(product.stock) || 0;
+
+
+    item.quantity +=
+        Number(change);
+
+
+    if(item.quantity <= 0){
+
+        removeFromCart(id);
+
+        return;
+
+    }
+
+
+    if(item.quantity > stock){
+
+        item.quantity =
+            stock;
+
+        alert(
+            "⚠️ الكمية المطلوبة أكبر من المخزون"
+        );
+
+    }
+
+
+    saveCart(cart);
+
+    updateCartCount();
+
+    renderCart();
+
+}
+
+
+/* =====================================================
+   REMOVE FROM CART
+===================================================== */
+
+function removeFromCart(id){
+
+    let cart =
+        getCart();
+
+    cart =
+        cart.filter(
+            item =>
+                Number(item.product_id) !==
+                Number(id)
+        );
+
+    saveCart(cart);
+
+    updateCartCount();
+
+    renderCart();
+
+}
+
+
+/* =====================================================
+   CHECKOUT
+===================================================== */
+
+function checkout(){
+
+    const cart =
+        getCart();
+
+    if(cart.length === 0){
+
+        alert(
+            "⚠️ السلة فارغة"
+        );
+
+        return;
+
+    }
+
+
+    const customerName =
+        el("customerName")
+        .value
+        .trim();
+
+    const phone =
+        el("customerPhone")
+        .value
+        .trim();
+
+    const address =
+        el("customerAddress")
+        .value
+        .trim();
+
+
+    if(!customerName){
+
+        alert(
+            "⚠️ اكتب اسم العميل"
+        );
+
+        el("customerName").focus();
+
+        return;
+
+    }
+
+
+    if(!phone){
+
+        alert(
+            "⚠️ اكتب رقم الهاتف"
+        );
+
+        el("customerPhone").focus();
+
+        return;
+
+    }
+
+
+    if(!address){
+
+        alert(
+            "⚠️ اكتب العنوان"
+        );
+
+        el("customerAddress").focus();
+
+        return;
+
+    }
+
+
+    const products =
+        getProducts();
+
+
+    /*
+        التأكد من المخزون
+    */
+
+    for(
+        const item of cart
+    ){
+
+        const product =
+            products.find(
+                product =>
+                    Number(product.id) ===
+                    Number(item.product_id)
+            );
+
+
+        if(!product){
+
+            alert(
+                `❌ المنتج ${item.product_name} غير موجود`
+            );
+
+            return;
+
+        }
+
+
+        const stock =
+            Number(product.stock) || 0;
+
+
+        if(
+            Number(item.quantity) >
+            stock
+        ){
+
+            alert(
+                `⚠️ الكمية المطلوبة من ${item.product_name} غير متوفرة`
+            );
+
+            loadProducts();
+
+            return;
+
+        }
+
+    }
+
+
+    /*
+        حساب الإجمالي
+    */
+
+    const total =
+        cart.reduce(
+            (
+                sum,
+                item
+            ) =>
+
+                sum +
+                (
+                    Number(item.price || 0) *
+                    Number(item.quantity || 0)
+                ),
+
+            0
+        );
+
+
+    /*
+        إنشاء رقم الطلب
+    */
+
+    const orders =
+        getOrders();
+
+
+    const newId =
+        orders.length > 0
+        ?
+        Math.max(
+            ...orders.map(
+                order =>
+                    Number(order.id) || 0
+            )
+        ) + 1
+        :
+        1;
+
+
+    /*
+        إنشاء الطلب
+    */
+
+    const order = {
+
+        id:newId,
+
+        customer_name:
+            customerName,
+
+        phone:
+            phone,
+
+        address:
+            address,
+
+        items:
+            cart.map(
+                item => ({
+
+                    product_id:
+                        Number(item.product_id),
+
+                    product_name:
+                        item.product_name,
+
+                    quantity:
+                        Number(item.quantity),
+
+                    price:
+                        Number(item.price || 0),
+
+                    weight:
+                        item.weight || ""
+
+                })
+            ),
+
+        total:
+            total,
+
+        status:
+            "جديد",
+
+        created_at:
+            new Date()
+                .toLocaleString(
+                    "ar-EG"
+                )
+
+    };
+
+
+    /*
+        حفظ الطلب
+    */
+
+    orders.push(order);
+
+
+    localStorage.setItem(
+
+        ORDERS_KEY,
+
+        JSON.stringify(orders)
+
+    );
+
+
+    /*
+        خصم المخزون
+    */
+
+    cart.forEach(
+        function(item){
+
+            const product =
+                products.find(
+                    product =>
+                        Number(product.id) ===
+                        Number(item.product_id)
+                );
+
+            if(product){
+
+                product.stock =
+                    Math.max(
+                        0,
+                        (
+                            Number(product.stock) || 0
+                        ) -
+                        (
+                            Number(item.quantity) || 0
+                        )
+                    );
+
+            }
+
+        }
+    );
+
+
+    /*
+        حفظ المخزون الجديد
+    */
+
+    localStorage.setItem(
+
+        PRODUCTS_KEY,
+
+        JSON.stringify(products)
+
+    );
+
+
+    /*
+        تفريغ السلة
+    */
+
+    localStorage.removeItem(
+        CART_KEY
+    );
+
+
+    updateCartCount();
+
+    loadProducts();
+
+    renderCart();
+
+
+    el("customerName").value = "";
+    el("customerPhone").value = "";
+    el("customerAddress").value = "";
+
+
+    alert(
+
+        "✅ تم تسجيل طلبك بنجاح\n\n" +
+
+        "رقم الطلب: #" +
+        newId +
+        "\n" +
+
+        "الإجمالي: " +
+        total +
+        " جنيه"
+
+    );
+
+
+    closeCart();
+
+}
+
+
+/* =====================================================
+   IMAGE VIEWER
+===================================================== */
+
+function openImageViewer(url){
+
+    if(!url){
+        return;
+    }
+
+    el("viewerImage")
+        .src =
+        url;
+
+    el("imageViewer")
+        .classList.add("show");
+
+    document.body
+        .classList.add("no-scroll");
+
+}
+
+
+function closeImageViewer(){
+
+    el("imageViewer")
+        .classList.remove("show");
+
+    document.body
+        .classList.remove("no-scroll");
+
+}
+
+
+/* =====================================================
+   ESCAPE KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            closeCart();
+
+            closeImageViewer();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CLICK OUTSIDE CART
+===================================================== */
+
+el("cartPanel")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            el("cartPanel")
+        ){
+
+            closeCart();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   TOP BUTTON
+===================================================== */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(
+            window.scrollY > 500
+        ){
+
+            el("topBtn")
+                .classList
+                .add("show");
+
+        }
+        else{
+
+            el("topBtn")
+                .classList
+                .remove("show");
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   STORAGE SYNC
+===================================================== */
+
+window.addEventListener(
+    "storage",
+    function(event){
+
+        /*
+            لو الأدمن عدّل المنتجات
+            والمتجر مفتوح في نافذة أخرى،
+            يتم تحديث المنتجات تلقائيًا.
+        */
+
+        if(
+            event.key === PRODUCTS_KEY
+        ){
+
+            loadProducts();
+
+        }
+
+
+        /*
+            لو حصل تغيير في الطلبات
+        */
+
+        if(
+            event.key === ORDERS_KEY
+        ){
+
+            updateCartCount();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   AUTO REFRESH
+===================================================== */
+
+setInterval(
+    function(){
+
+        loadProducts();
+
+    },
+    3000
+);
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+loadProducts();
+
+updateCartCount();
+
+
+/* =====================================================
+   CONSOLE
+===================================================== */
+
+console.log(
+    "🌴 تمور آل عجلان - Store Loaded"
+);
+
+console.log(
+    "📦 Products:",
+    getProducts()
+);
+
+console.log(
+    "🛒 Orders:",
+    getOrders()
+);
+
+</script>
 
 </body>
-
 </html>
